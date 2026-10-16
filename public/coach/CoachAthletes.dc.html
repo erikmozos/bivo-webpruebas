@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/coach/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</helmet>
+<div ref="{{ root }}" style="position:relative;width:100%;height:{{ boxH }};overflow:hidden;background:#f3f4f6">
+<div style="position:absolute;left:0;top:0;width:1480px;height:820px;transform:{{ tf }};transform-origin:0 0;display:flex;background:#f3f4f6;color:#111827;font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-align:left;line-height:1.4">
+  <aside style="width:228px;background:#111827;display:flex;flex-direction:column;flex-shrink:0;color:#fff">
+    <div style="height:72px;padding:0 20px;border-bottom:1px solid #1f2937;display:flex;align-items:center;gap:10px">
+      <img src="/coach/public/logo-bivo.png" alt="" width="36" height="36" style="object-fit:contain;width:36px;height:36px">
+      <div style="line-height:1.2"><div style="font-weight:800;font-size:17px;letter-spacing:-0.02em">BIVO</div><div style="font-size:11px;color:#00ff57;font-weight:700;text-transform:uppercase;letter-spacing:0.08em">Coach</div></div>
+    </div>
+    <nav style="flex:1;padding:12px 10px;display:flex;flex-direction:column;gap:4px;font-size:15px">
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;color:#d1d5db"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg>Dashboard</div>
+      <div style="position:relative;display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;background:#1f2937;color:#fff;font-weight:600"><span style="position:absolute;left:0;top:8px;bottom:8px;width:3px;background:#00ff57;border-radius:0 4px 4px 0"></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00ff57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>{{ t.navAthletes }}</div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;color:#d1d5db"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"></path><path d="m14.5 12.5 2-2"></path><path d="m11.5 9.5 2-2"></path><path d="m8.5 6.5 2-2"></path></svg>{{ t.navTests }}</div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;color:#d1d5db"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 6.5 11 11"></path><path d="m21 21-1-1"></path><path d="m3 3 1 1"></path><path d="m18 22 4-4"></path><path d="m2 6 4-4"></path><path d="m3 10 7-7"></path><path d="m14 21 7-7"></path></svg>{{ t.navWorkouts }}</div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;color:#d1d5db"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>{{ t.navMessages }}</div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;color:#d1d5db"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21a8 8 0 0 0-16 0"></path><circle cx="10" cy="8" r="5"></circle><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"></path></svg>{{ t.navTeam }}</div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;color:#d1d5db"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>{{ t.navSettings }}</div>
+    </nav>
+    <div style="padding:16px 20px;border-top:1px solid #1f2937;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;border-radius:8px;background:#1f2937;border:1px solid #374151;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#00ff57">TB</div><div><div style="font-size:13px;font-weight:600">Toni Bota</div><div style="font-size:11px;color:#9ca3af">Professional</div></div></div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#d1d5db"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg>{{ t.logout }}</div>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:11px;color:#6b7280"><span>{{ t.privacy }}</span><span>{{ t.cookies }}</span><span>{{ t.terms }}</span></div>
+    </div>
+  </aside>
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <header style="height:72px;background:#fff;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:space-between;padding:0 24px;flex-shrink:0">
+      <div><div style="font-size:24px;font-weight:800;letter-spacing:-0.02em;line-height:1.15">{{ t.title }}</div><div style="font-size:14px;color:#4b5563">{{ t.subtitle }}</div></div>
+      <div style="display:flex;padding:3px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600"><span style="padding:5px 10px;border-radius:6px;background:{{ t.esBg }};color:{{ t.esFg }}">ES</span><span style="padding:5px 10px;border-radius:6px;background:{{ t.enBg }};color:{{ t.enFg }}">EN</span></div>
+    </header>
+    <div style="padding:20px 24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="padding:8px 16px;border-radius:999px;background:#dcfce7;border:1px solid #22c55e;color:#15803d;font-size:14px;font-weight:600">{{ t.all }} (8)</span>
+        <span style="padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #e5e7eb;color:#374151;font-size:14px;font-weight:500">{{ t.active }} (7)</span>
+        <span style="padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #e5e7eb;color:#374151;font-size:14px;font-weight:500">{{ t.pending }} (1)</span>
+        <span style="margin-left:auto;display:flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;background:#fff;border:1px solid #e5e7eb;font-size:15px;font-weight:700">+ {{ t.newGroup }}</span>
+        <span style="display:flex;align-items:center;gap:8px;padding:11px 20px;border-radius:10px;background:#22e03a;color:#052e16;font-size:15px;font-weight:700">+ {{ t.addAthlete }}</span>
+      </div>
+      <div style="font-size:13px;color:#4b5563"><strong style="color:#111827">{{ t.drag }} ::</strong> {{ t.dragHint }}</div>
+      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:16px 38px 150px minmax(0,1fr) 112px 140px 56px 104px 84px 40px 126px;gap:10px;align-items:center;padding:12px 16px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-size:11.5px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:#6b7280">
+          <span></span><span></span><span>{{ t.hAthlete }}</span><span>Email</span><span>{{ t.hSport }}</span><span>{{ t.hCompliance }}</span><span>{{ t.hStreak }}</span><span>{{ t.hCoaches }}</span><span>{{ t.hStatus }}</span><span>{{ t.hAge }}</span><span></span>
+        </div>
+        <div style="display:grid;grid-template-columns:16px 38px 150px minmax(0,1fr) 112px 140px 56px 104px 84px 40px 126px;gap:10px;align-items:center;padding:10px 16px;border-bottom:1px solid #f3f4f6">
+          <span style="color:#d1d5db;font-size:14px;letter-spacing:-2px">⋮⋮</span>
+          <span style="width:38px;height:38px;border-radius:8px;background:#fef3c7;border:1px solid #fcd34d;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"></path></svg></span>
+          <span style="grid-column:span 7"><strong style="display:block;font-size:15px">{{ t.groupName }}</strong><span style="font-size:12.5px;color:#6b7280">{{ t.groupMeta }}</span></span>
+          <span style="grid-column:span 2;display:flex;justify-content:flex-end;gap:8px"><span style="padding:7px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600">{{ t.open }} →</span></span>
+        </div>
+        <sc-for list="{{ rows }}" as="a" hint-placeholder-count="8">
+          <div style="display:grid;grid-template-columns:16px 38px 150px minmax(0,1fr) 112px 140px 56px 104px 84px 40px 126px;gap:10px;align-items:center;padding:9px 16px;border-bottom:1px solid #f3f4f6;font-size:14px">
+            <span style="color:#d1d5db;font-size:14px;letter-spacing:-2px">⋮⋮</span>
+            <span style="width:38px;height:38px;border-radius:8px;background:{{ a.bg }};border:1px solid {{ a.bd }};color:{{ a.fg }};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">{{ a.ini }}</span>
+            <strong style="font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.name }}</strong>
+            <span style="color:#374151;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.email }}</span>
+            <span style="line-height:1.25"><strong style="display:block;font-size:14px">{{ a.sport }}</strong><span style="font-size:12.5px;color:#6b7280">{{ a.level }}</span></span>
+            <span style="display:flex;align-items:center;gap:10px"><span style="flex:1;height:6px;border-radius:99px;background:#e5e7eb;overflow:hidden"><span style="display:block;height:100%;width:{{ a.pct }};background:{{ a.col }};border-radius:99px"></span></span><span style="min-width:40px;text-align:right;font-weight:600;white-space:nowrap;color:{{ a.col }}">{{ a.compTxt }}</span></span>
+            <span style="display:flex;align-items:center;gap:4px;color:{{ a.stCol }};font-weight:600">{{ a.fire }}{{ a.streak }}</span>
+            <span style="color:#374151">Toni Bota</span>
+            <span><span style="display:inline-block;padding:3px 9px;border-radius:6px;background:{{ a.sBg }};border:1px solid {{ a.sBd }};color:{{ a.sFg }};font-size:12.5px;font-weight:600">{{ a.status }}</span></span>
+            <span style="color:#374151">{{ a.age }}</span>
+            <span style="display:flex;justify-content:flex-end;align-items:center;gap:8px"><span style="padding:7px 12px;border-radius:8px;background:#22e03a;color:#052e16;font-size:13px;font-weight:700;white-space:nowrap">{{ t.view }} →</span><span style="width:32px;height:32px;border:1px solid #e5e7eb;border-radius:8px;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></span></span>
+          </div>
+        </sc-for>
+        <div style="display:grid;grid-template-columns:16px 38px 150px minmax(0,1fr) 112px 140px 56px 104px 84px 40px 126px;gap:10px;align-items:center;padding:10px 16px">
+          <span style="color:#d1d5db;font-size:14px;letter-spacing:-2px">⋮⋮</span>
+          <span style="width:38px;height:38px;border-radius:8px;background:#f3f4f6;border:1px solid #d1d5db;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="5" x="2" y="3" rx="1"></rect><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path><path d="M10 12h4"></path></svg></span>
+          <span style="grid-column:span 7"><strong style="display:block;font-size:15px">{{ t.archived }}</strong><span style="font-size:12.5px;color:#6b7280">{{ t.archivedMeta }}</span></span>
+          <span style="grid-column:span 2;display:flex;justify-content:flex-end"><span style="padding:7px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;font-weight:600">{{ t.open }} →</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1024,&quot;height&quot;:600},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;es&quot;,&quot;en&quot;],&quot;default&quot;:&quot;es&quot;,&quot;tsType&quot;:&quot;'es'|'en'&quot;}}">
+const W = 1480, H = 820;
+const PAL = [['#ffedd5','#fdba74','#c2410c'],['#ccfbf1','#5eead4','#0f766e'],['#fee2e2','#fca5a5','#b91c1c'],['#e0e7ff','#a5b4fc','#4338ca'],['#fef9c3','#fde047','#a16207'],['#fce7f3','#f9a8d4','#be185d'],['#dcfce7','#86efac','#15803d'],['#e0f2fe','#7dd3fc','#0369a1']];
+const ATH = [
+  ['Imanol López', 'imanol.lopez@gmail.com', 'tennis', 'adv', 88, 6, 24],
+  ['Lucía Martín', 'lucia.martin@gmail.com', 'padel', 'int', 72, 4, 29],
+  ['Marc Ferrer', 'marc.ferrer@hotmail.com', 'pickleball', 'int', 64, 3, 41],
+  ['Aina Serra', 'aina.serra@gmail.com', 'badminton', 'adv', 91, 9, 19],
+  ['Pablo Ruiz', 'pablo.ruiz@outlook.com', 'padel', 'beg', 45, 1, 35],
+  ['Carla Vidal', 'carla.vidal@gmail.com', 'tennis', 'int', 22, 0, 16],
+  ['Javier Moreno', 'javier.moreno@gmail.com', 'pickleball', 'adv', 80, 5, 52],
+  ['Nerea Castro', 'nerea.castro@hotmail.com', 'badminton', 'int', null, 0, 27],
+];
+const I18N = {
+  es: { navAthletes: 'Deportistas', navTests: 'Tests físicos', navWorkouts: 'Mis workouts', navMessages: 'Mensajes', navTeam: 'Equipo', navSettings: 'Configuración', logout: 'Cerrar sesión', privacy: 'Política de privacidad', cookies: 'Política de cookies', terms: 'Términos y condiciones', title: 'Mis deportistas', subtitle: 'Gestiona e invita a tus deportistas', all: 'Todos', active: 'Activos', pending: 'Pendientes', newGroup: 'Crear grupo', addAthlete: 'Añadir deportista', drag: 'Arrastra', dragHint: 'para reordenar · Arrastra un deportista sobre un grupo para meterlo', hAthlete: 'Deportista', hSport: 'Deporte · Nivel', hCompliance: 'Cumplimiento', hStreak: 'Racha', hCoaches: 'Entrenadores', hStatus: 'Estado', hAge: 'Edad', groupName: 'Rendimiento', groupMeta: '3 deportistas · Doble clic para abrir', archived: 'Archivados', archivedMeta: '0 deportistas · Sin ficha ni acceso gratis a la app', open: 'Abrir', view: 'Ver ficha', noData: 'Sin datos', stActive: 'Activo', stPending: 'Pendiente',
+    sports: { tennis: 'Tenis', padel: 'Pádel', pickleball: 'Pickleball', badminton: 'Bádminton' }, levels: { beg: 'Iniciación', int: 'Intermedio', adv: 'Avanzado' } },
+  en: { navAthletes: 'Athletes', navTests: 'Physical tests', navWorkouts: 'My workouts', navMessages: 'Messages', navTeam: 'Team', navSettings: 'Settings', logout: 'Log out', privacy: 'Privacy policy', cookies: 'Cookie policy', terms: 'Terms and conditions', title: 'My athletes', subtitle: 'Manage and invite your athletes', all: 'All', active: 'Active', pending: 'Pending', newGroup: 'New group', addAthlete: 'Add athlete', drag: 'Drag', dragHint: 'to reorder · Drag an athlete onto a group to add them', hAthlete: 'Athlete', hSport: 'Sport · Level', hCompliance: 'Compliance', hStreak: 'Streak', hCoaches: 'Coaches', hStatus: 'Status', hAge: 'Age', groupName: 'Performance', groupMeta: '3 athletes · Double-click to open', archived: 'Archived', archivedMeta: '0 athletes · No profile or free app access', open: 'Open', view: 'View profile', noData: 'No data', stActive: 'Active', stPending: 'Pending',
+    sports: { tennis: 'Tennis', padel: 'Padel', pickleball: 'Pickleball', badminton: 'Badminton' }, levels: { beg: 'Beginner', int: 'Intermediate', adv: 'Advanced' } },
+};
+class Component extends DCLogic {
+  state = { s: 0.73 };
+  root = React.createRef();
+  measure() { const el = this.root.current; if (!el || !el.clientWidth) return; const s = el.clientWidth / W; if (Math.abs(s - this.state.s) > 0.001) this.setState({ s }); }
+  attach() { const el = this.root.current; if (el && this.obs !== el) { this.obs = el; this.ro.observe(el); this.measure(); } }
+  componentDidMount() {
+    this.ro = new ResizeObserver(() => this.measure());
+    this.attach(); requestAnimationFrame(() => this.attach());
+  }
+  componentDidUpdate() { this.attach(); }
+  componentWillUnmount() { this.ro && this.ro.disconnect(); }
+  renderVals() {
+    const lang = this.props.lang === 'en' ? 'en' : 'es', L = I18N[lang];
+    const t = { ...L, esBg: lang === 'es' ? '#22e03a' : 'transparent', esFg: lang === 'es' ? '#052e16' : '#374151', enBg: lang === 'en' ? '#22e03a' : 'transparent', enFg: lang === 'en' ? '#052e16' : '#374151' };
+    const rows = ATH.map(([name, email, sp, lv, c, streak, age], i) => {
+      const p = PAL[i % PAL.length], none = c == null;
+      const col = none ? '#9ca3af' : c >= 70 ? '#16a34a' : c >= 40 ? '#f59e0b' : '#ef4444';
+      return {
+        name, email, ini: name.split(' ').map(w => w[0]).slice(0, 2).join(''), bg: p[0], bd: p[1], fg: p[2],
+        sport: L.sports[sp], level: L.levels[lv], pct: none ? '0%' : c + '%', col, compTxt: none ? L.noData : c + '%',
+        fire: streak > 0 ? '🔥' : '', streak, stCol: streak > 0 ? '#ea580c' : '#6b7280', age,
+        status: none ? L.stPending : L.stActive,
+        sBg: none ? '#fef3c7' : '#f0fdf4', sBd: none ? '#fcd34d' : '#86efac', sFg: none ? '#a16207' : '#15803d',
+      };
+    });
+    const s = this.state.s;
+    return { root: this.root, tf: `scale(${s})`, boxH: `${Math.round(H * s)}px`, t, rows };
+  }
+}
+</script>
+</body>
+</html>

@@ -3,7 +3,30 @@
   "buildCommand": "vite build",
   "devCommand": "vite --port $PORT",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/coach",
+      "destination": "/es/coach",
+      "permanent": false
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/es/coach",
+      "destination": "/coach/index.html"
+    },
+    {
+      "source": "/es/coach/",
+      "destination": "/coach/index.html"
+    },
+    {
+      "source": "/en/coach",
+      "destination": "/coach/en.html"
+    },
+    {
+      "source": "/en/coach/",
+      "destination": "/coach/en.html"
+    },
     {
       "source": "/en",
       "destination": "/en.html"

@@ -12,7 +12,14 @@
       "openMenu": "Open menu",
       "closeMenu": "Close menu"
     },
-    "logoAlt": "Bivo Training Logo"
+    "logoAlt": "Bivo Training Logo",
+    "coach": "BIVO Coach",
+    "coachPopover": {
+      "eyebrow": "For professionals",
+      "title": "Are you a coach, club or federation?",
+      "text": "Manage all your athletes with BIVO Coach: personalised strength & conditioning plans that build and adapt themselves. You just follow up.",
+      "cta": "Go to BIVO Coach"
+    }
   },
   "footer": {
     "brand": "Bivo",

@@ -6,6 +6,32 @@ import { componentTagger } from "lovable-tagger";
 import { applySeoToHtml } from "./src/lib/seo";
 import { vercelApiDevPlugin } from "./vite-plugin-api";
 
+/** BIVO Coach: landing estática en public/coach, servida en /es/coach y /en/coach (igual que en vercel.json). */
+function coachLandingPlugin(): Plugin {
+  const rewrite = (req: { url?: string }) => {
+    const [pathname, query] = (req.url || "").split("?");
+    const match = pathname.match(/^\/(es|en)\/coach\/?$/);
+    if (match) {
+      req.url = `/coach/${match[1] === "en" ? "en" : "index"}.html${query ? `?${query}` : ""}`;
+    }
+  };
+  return {
+    name: "coach-landing",
+    configureServer(server) {
+      server.middlewares.use((req, _res, next) => {
+        rewrite(req);
+        next();
+      });
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use((req, _res, next) => {
+        rewrite(req);
+        next();
+      });
+    },
+  };
+}
+
 function localeHtmlPlugin(): Plugin {
   const isEnPath = (url?: string) =>
     Boolean(url && url.split("?")[0].split("#")[0].startsWith("/en"));
@@ -60,6 +86,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
+    coachLandingPlugin(),
     localeHtmlPlugin(),
     vercelApiDevPlugin(),
     mode === 'development' &&

@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/coach/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>BIVO Coach · Automate strength & conditioning and win more clients</title>
+<meta name="description" content="Offer personalized strength & conditioning to every player without hiring more coaches. For padel, tennis, pickleball and badminton clubs, coaches and federations.">
+<meta property="og:title" content="BIVO Coach · Win back your time and win more clients">
+<meta property="og:description" content="Personalized plans that build and adapt themselves. You just follow up.">
+<meta property="og:image" content="[ASSET: share image 1200x630]">
+<link rel="canonical" href="https://bivotraining.com/en/coach">
+<link rel="alternate" hreflang="es" href="https://bivotraining.com/es/coach">
+<link rel="alternate" hreflang="en" href="https://bivotraining.com/en/coach">
+<link rel="alternate" hreflang="x-default" href="https://bivotraining.com/es/coach">
+<link rel="icon" type="image/png" href="/coach/public/logo-bivo.png">
+<meta property="og:locale" content="en_GB">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Arbeit Pro';src:url('/coach/fonts/ArbeitPro-Book.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Arbeit Pro';src:url('/coach/fonts/ArbeitPro-Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Arbeit Pro';src:url('/coach/fonts/ArbeitPro-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@keyframes bivo-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#FFFFFF;color:#000000;font-family:'Arbeit Pro','DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:3px}
+a:hover{color:inherit}
+:focus-visible{outline:3px solid #39FF14;outline-offset:2px}
+[data-marquee]:hover{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}[data-marquee]{animation:none !important}}
+</style>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"Organization","name":"BIVO Training S.L.","url":"https://bivotraining.com","logo":"https://bivotraining.com/coach/assets/logo-black.png"},
+ {"@context":"https://schema.org","@type":"SoftwareApplication","name":"BIVO Coach","applicationCategory":"SportsApplication","operatingSystem":"Web, iOS, Android","publisher":{"@type":"Organization","name":"BIVO Training S.L."}},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Does BIVO replace my S&C coach or my coaching staff?","acceptedAnswer":{"@type":"Answer","text":"No. It multiplies their reach. BIVO builds and adapts the plans; you supervise, edit and bring your judgment."}},
+  {"@type":"Question","name":"Can I create my own workouts or edit the ones BIVO creates?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can edit any session, create your own and assign them to an athlete or a group."}},
+  {"@type":"Question","name":"What happens if an athlete has discomfort or an injury?","acceptedAnswer":{"@type":"Answer","text":"They report it in the app and the plan adapts to avoid loading that area. BIVO does not diagnose or replace a healthcare professional: if injured, the athlete should see their doctor or physiotherapist."}},
+  {"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"It depends on the number of athletes and how you want to use it. We go through it on the assessment call and send you a tailored proposal."}},
+  {"@type":"Question","name":"How many athletes can I manage?","acceptedAnswer":{"@type":"Answer","text":"As many as you need. Because programming and adaptation are automatic, growing doesn’t multiply your workload."}},
+  {"@type":"Question","name":"How much can I charge my athletes?","acceptedAnswer":{"@type":"Answer","text":"You decide. It’s your service, at your price."}},
+  {"@type":"Question","name":"Is my data and my athletes’ data protected?","acceptedAnswer":{"@type":"Answer","text":"Yes. We comply with the GDPR and Spanish and European data protection law."}}
+ ]}
+]
+</script>
+</helmet>
+
+<a href="#main" style="position:absolute;left:-9999px;top:0;background:#39FF14;color:#000;padding:12px 16px;z-index:100" style-focus="left:12px;top:12px">Skip to content</a>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:50;background:{{ chrome.headerBg }};border-bottom:1px solid {{ chrome.headerBd }};backdrop-filter:{{ chrome.headerBlur }};-webkit-backdrop-filter:{{ chrome.headerBlur }};transition:background 200ms ease-out,border-color 200ms ease-out">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,48px);height:68px;display:flex;align-items:center;gap:clamp(10px,2vw,24px)">
+    <a href="#top" onClick="{{ goTo }}" data-target="top" aria-label="BIVO Coach, home" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0">
+      <img src="/coach/assets/logo-black.png" alt="BIVO" width="116" height="21" style="width:116px;height:auto;display:block">
+      <sc-if value="{{ chrome.notMobile }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#55555C;border-left:1px solid #DAD5D1;padding-left:10px">Coach</span></sc-if>
+    </a>
+    <sc-if value="{{ chrome.navFull }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Main" style="display:flex;align-items:center;gap:28px;margin-left:auto">
+        <button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ nav.exp }}" aria-controls="menu-funcionalidades" data-testid="nav-funcionalidades" style="display:inline-flex;align-items:center;gap:6px;padding:8px 0;background:none;border:0;color:#000;font:inherit;font-size:15px;font-weight:500;cursor:pointer">Features<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform:{{ nav.rot }};transition:transform 200ms ease-out"><path d="m6 9 6 6 6-6"></path></svg></button>
+        <a href="#como-funciona" onClick="{{ goTo }}" data-target="como-funciona" style="color:#55555C;text-decoration:none;font-size:15px;white-space:nowrap" style-hover="color:#000">How it works</a>
+        <a href="#producto" onClick="{{ goTo }}" data-target="producto" style="color:#55555C;text-decoration:none;font-size:15px;white-space:nowrap" style-hover="color:#000">Product</a>
+        <a href="#testimonios" onClick="{{ goTo }}" data-target="testimonios" style="color:#55555C;text-decoration:none;font-size:15px;white-space:nowrap" style-hover="color:#000">Testimonials</a>
+        <a href="#faq" onClick="{{ goTo }}" data-target="faq" style="color:#55555C;text-decoration:none;font-size:15px;white-space:nowrap" style-hover="color:#000">FAQ</a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ chrome.navCompact }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ nav.exp }}" aria-controls="menu-funcionalidades" aria-label="Open menu" data-testid="nav-mobile" style="margin-left:auto;width:44px;height:44px;border-radius:100px;border:1px solid #DAD5D1;background:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg></button></sc-if>
+    <div style="margin-left:{{ chrome.ctaMl }};display:flex;align-items:center;gap:clamp(8px,1.2vw,16px);flex-shrink:0">
+      <div role="group" aria-label="Language" data-lang-switch="" style="display:flex;align-items:center;height:38px;padding:3px;border:1px solid #DAD5D1;border-radius:100px;background:#FFFFFF">
+        <a href="/es/coach" hreflang="es" lang="es" aria-label="Español" data-testid="lang-es" style="display:flex;align-items:center;justify-content:center;width:32px;height:30px;border-radius:100px;color:#55555C;font-size:13px;font-weight:700;text-decoration:none" style-hover="color:#000">ES</a>
+        <a href="/en/coach" hreflang="en" lang="en" aria-current="page" aria-label="English" data-testid="lang-en" style="display:flex;align-items:center;justify-content:center;width:32px;height:30px;border-radius:100px;background:#000;color:#FFFFFF;font-size:13px;font-weight:700;text-decoration:none">EN</a>
+      </div>
+      <a href="#diagnostico" onClick="{{ goTo }}" data-target="diagnostico" data-testid="cta-header" style="display:inline-flex;align-items:center;min-height:44px;padding:0 clamp(16px,1.6vw,20px);border-radius:100px;background:#39FF14;color:#000;font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;transition:filter 150ms ease-out" style-hover="filter:brightness(1.05)">{{ chrome.headerCta }}</a>
+      <sc-if value="{{ chrome.notMobile }}" hint-placeholder-val="{{ true }}"><a href="https://www.bivocoach.com/" data-testid="login-header" style="font-size:15px;font-weight:500;color:#000;text-decoration:none;white-space:nowrap" style-hover="text-decoration:underline">Log in</a></sc-if>
+    </div>
+  </div>
+  <sc-if value="{{ nav.open }}" hint-placeholder-val="{{ false }}">
+    <div id="menu-funcionalidades" style="border-top:1px solid #E7E3E0;background:#FFFFFF;box-shadow:0 40px 60px -40px rgba(0,0,0,0.3);max-height:calc(100vh - 68px);overflow-y:auto">
+      <div style="max-width:1240px;margin:0 auto;padding:20px clamp(16px,4vw,48px) 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px">
+        <div style="background:#F4F2F0;border-radius:12px;padding:20px"><p style="margin:0;font-weight:700;font-size:16px">Automated planning</p><p style="margin:0 0 10px;font-size:13px;color:#55555C">Plans that build themselves</p><ul style="list-style:none;margin:0;padding:0"><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Automated personalized plans</a></li><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Adapts to discomfort</a></li><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Equipment changes and travel</a></li><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">1,200+ racket-sport exercises</a></li></ul></div>
+        <div style="background:#F4F2F0;border-radius:12px;padding:20px"><p style="margin:0;font-weight:700;font-size:16px">Tracking</p><p style="margin:0 0 10px;font-size:13px;color:#55555C">Stay in control without chasing anyone</p><ul style="list-style:none;margin:0;padding:0"><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Compliance and progress</a></li><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Load and fatigue</a></li><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Physical tests</a></li><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Athlete stats</a></li></ul></div>
+        <div style="background:#F4F2F0;border-radius:12px;padding:20px"><p style="margin:0;font-weight:700;font-size:16px">Management</p><p style="margin:0 0 10px;font-size:13px;color:#55555C">Your staff and your athletes</p><ul style="list-style:none;margin:0;padding:0"><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Calendar per athlete</a></li><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Groups</a></li><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Your own workouts</a></li><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Coaching staff with roles</a></li></ul></div>
+        <div style="background:#F4F2F0;border-radius:12px;padding:20px"><p style="margin:0;font-weight:700;font-size:16px">Communication</p><p style="margin:0 0 10px;font-size:13px;color:#55555C">Less WhatsApp, more autonomy</p><ul style="list-style:none;margin:0;padding:0"><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Direct chat</a></li><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">Notifications</a></li><li><a href="#funcionalidades" onClick="{{ navGo }}" data-target="funcionalidades" style="display:block;padding:6px 0;color:#000;text-decoration:none;font-size:15px" style-hover="text-decoration:underline">iOS and Android app</a></li></ul></div>
+        <div style="background:#000;color:#FFFFFF;border-radius:12px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;gap:16px"><div><p style="margin:0 0 6px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;text-transform:uppercase;line-height:1">Free assessment</p><p style="margin:0;font-size:14px;color:#A1A1AA">[30] min to see how much time you can win back.</p></div><a href="#diagnostico" onClick="{{ navGo }}" data-target="diagnostico" data-testid="cta-menu" style="align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:100px;background:#39FF14;color:#000;font-weight:700;font-size:14px;text-decoration:none">Book your assessment</a></div>
+      </div>
+      <sc-if value="{{ chrome.navCompact }}" hint-placeholder-val="{{ false }}">
+        <nav aria-label="Sections" style="display:flex;flex-direction:column;padding:0 16px 20px">
+          <a href="#como-funciona" onClick="{{ navGo }}" data-target="como-funciona" style="padding:14px 0;border-top:1px solid #E7E3E0;text-decoration:none;font-weight:500">How it works</a>
+          <a href="#producto" onClick="{{ navGo }}" data-target="producto" style="padding:14px 0;border-top:1px solid #E7E3E0;text-decoration:none;font-weight:500">Product</a>
+          <a href="#testimonios" onClick="{{ navGo }}" data-target="testimonios" style="padding:14px 0;border-top:1px solid #E7E3E0;text-decoration:none;font-weight:500">Testimonials</a>
+          <a href="#faq" onClick="{{ navGo }}" data-target="faq" style="padding:14px 0;border-top:1px solid #E7E3E0;text-decoration:none;font-weight:500">FAQ</a>
+          <a href="https://www.bivocoach.com/" data-testid="login-menu" style="padding:14px 0;border-top:1px solid #E7E3E0;text-decoration:none;font-weight:500">Log in</a>
+        </nav>
+      </sc-if>
+    </div>
+  </sc-if>
+</header>
+
+<main id="main">
+
+<section id="top" ref="{{ heroEl }}" aria-labelledby="hero-title" style="position:relative;padding:clamp(100px,10vw,128px) 0 0;background:#FFFFFF;overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;align-items:center;text-align:center">
+    <p style="margin:0 0 20px;display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid #DAD5D1;border-radius:100px;font-size:14px;font-weight:500;color:#000"><span aria-hidden="true" style="width:8px;height:8px;border-radius:100px;background:#39FF14;box-shadow:0 0 0 3px rgba(57,255,20,0.25)"></span>For racket-sport clubs, coaches and federations</p>
+    <h1 id="hero-title" style="margin:0;max-width:980px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(38px,5.4vw,78px);line-height:0.9;letter-spacing:-0.015em;text-wrap:balance">
+      <sc-if value="{{ h1.a }}" hint-placeholder-val="{{ true }}"><span style="background:linear-gradient(transparent 58%,#39FF14 58%,#39FF14 92%,transparent 92%);padding:0 0.06em">Win back your time.</span> Automate strength & conditioning and spend it winning more clients.</sc-if>
+      <sc-if value="{{ h1.b }}" hint-placeholder-val="{{ false }}">Stop programming by hand. <span style="background:linear-gradient(transparent 58%,#39FF14 58%,#39FF14 92%,transparent 92%);padding:0 0.06em">Spend your time selling.</span></sc-if>
+      <sc-if value="{{ h1.c }}" hint-placeholder-val="{{ false }}">Your player is off to a tournament. <span style="background:linear-gradient(transparent 58%,#39FF14 58%,#39FF14 92%,transparent 92%);padding:0 0.06em">Their training adapts on its own.</span></sc-if>
+    </h1>
+    <p style="margin:22px 0 0;max-width:640px;font-size:clamp(17px,1.5vw,20px);line-height:1.5;color:#000;text-wrap:pretty">Offer personalized strength & conditioning to every player without hiring more coaches.</p>
+    <p style="margin:10px 0 0;max-width:600px;font-size:16px;color:#55555C;text-wrap:pretty">BIVO builds and adapts every plan automatically. You just follow up.</p>
+    <div style="margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 20px">
+      <a href="#diagnostico" onClick="{{ goTo }}" data-target="diagnostico" data-testid="cta-hero" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 30px;border-radius:100px;background:#39FF14;color:#000;font-weight:700;font-size:17px;text-decoration:none;transition:filter 150ms ease-out,transform 150ms ease-out" style-hover="filter:brightness(1.05)" style-active="transform:scale(0.97)">Book your free assessment <span aria-hidden="true">→</span></a>
+      <a href="{{ waHref }}" target="_blank" rel="noopener" onClick="{{ waClick }}" data-testid="whatsapp-hero" style="font-size:16px;font-weight:500;color:#000;text-decoration:underline;text-decoration-color:#DAD5D1;text-underline-offset:5px" style-hover="text-decoration-color:#000">or message us on WhatsApp</a>
+    </div>
+    <p style="margin:14px 0 0;font-size:13px;color:#55555C">[30]-min call · No commitment · Limited spots each week</p>
+  </div>
+
+  <div style="position:relative;max-width:1240px;margin:clamp(32px,4vw,52px) auto 0;padding:0 clamp(20px,4vw,48px)">
+    
+    <div style="position:relative;padding-right:clamp(40px,11vw,150px)">
+      <div style="border-radius:14px;overflow:hidden;background:#FFFFFF;border:1px solid #DAD5D1;box-shadow:0 40px 80px -30px rgba(0,0,0,0.35)">
+        <div aria-hidden="true" style="height:clamp(22px,3vw,36px);display:flex;align-items:center;gap:6px;padding:0 14px;background:#F4F2F0;border-bottom:1px solid #E7E3E0">
+          <span style="width:10px;height:10px;border-radius:100px;background:#DAD5D1"></span><span style="width:10px;height:10px;border-radius:100px;background:#DAD5D1"></span><span style="width:10px;height:10px;border-radius:100px;background:#DAD5D1"></span>
+          <span style="margin-left:12px;flex:1;max-width:260px;height:55%;border-radius:100px;background:#FFFFFF"></span>
+        </div>
+        <div ref="{{ heroMock }}" style="position:relative;width:100%;height:{{ scale.heroH }};overflow:hidden">
+          <div style="position:absolute;left:0;top:0;width:1180px;height:740px;transform:{{ scale.heroTf }};transform-origin:0 0;pointer-events:none" aria-hidden="true">
+            <dc-import name="CoachDashboard EN" hint-size="1180px,740px"></dc-import>
+          </div>
+        </div>
+      </div>
+      
+      <div style="position:absolute;right:0;bottom:clamp(-28px,-2vw,-12px);width:clamp(110px,19vw,250px)">
+        <dc-import name="PhoneMockup" items="{{ heroItems }}" index="{{ heroIdx }}" on-shown="{{ heroShown }}" on-ended="{{ heroVideoEnded }}" hint-size="100%,520px"></dc-import>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#000;padding:clamp(56px,7vw,80px) 0 clamp(40px,5vw,56px);color:#FFFFFF">
+    <ul style="list-style:none;margin:0 auto;padding:0 clamp(20px,4vw,48px);max-width:1240px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 36px;font-size:14px;color:#A1A1AA">
+      <li style="display:flex;align-items:center;gap:10px"><span aria-hidden="true" style="width:6px;height:6px;background:#39FF14;border-radius:100px"></span>Methodology built training ATP and WTA players</li>
+      <li style="display:flex;align-items:center;gap:10px"><span aria-hidden="true" style="width:6px;height:6px;background:#39FF14;border-radius:100px"></span>Used by clubs, academies, federations and online coaches</li>
+    </ul>
+  </div>
+</section>
+
+<section aria-labelledby="trust-title" style="background:#000;padding:0 0 clamp(56px,7vw,80px);color:#FFFFFF">
+  <h2 id="trust-title" style="margin:0 0 28px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#A1A1AA">Professionals who already trust BIVO</h2>
+  <div style="position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)">{{ marquee }}</div>
+</section>
+
+<section aria-labelledby="problema-title" style="padding:clamp(80px,11vw,136px) 0;background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#55555C">The problem</p>
+    <h2 id="problema-title" style="margin:0 0 clamp(40px,6vw,64px);max-width:980px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:0.95;letter-spacing:-0.01em;text-wrap:balance">Programming every plan one by one eats the time you need <span style="background:linear-gradient(transparent 58%,#39FF14 58%,#39FF14 92%,transparent 92%)">to grow.</span></h2>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px">
+      <li style="background:#F4F2F0;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:12px">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+        <p style="margin:0;font-weight:700;font-size:19px;line-height:1.3">Every new athlete means more work, not more margin.</p>
+        <p style="margin:0;color:#55555C;font-size:16px">More plans to build and more tweaks to make by hand.</p>
+      </li>
+      <li style="background:#F4F2F0;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:12px">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+        <p style="margin:0;font-weight:700;font-size:19px;line-height:1.3">WhatsApp never stops.</p>
+        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start">
+          <span style="background:#FFFFFF;border-radius:12px 12px 12px 4px;padding:6px 12px;font-size:14px">"My shoulder hurts."</span>
+          <span style="background:#FFFFFF;border-radius:12px 12px 12px 4px;padding:6px 12px;font-size:14px">"The hotel only has dumbbells."</span>
+          <span style="background:#FFFFFF;border-radius:12px 12px 12px 4px;padding:6px 12px;font-size:14px">"I can only do two days this week."</span>
+        </div>
+      </li>
+      <li style="background:#F4F2F0;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:12px">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6"></path><path d="M22 11h-6"></path></svg>
+        <p style="margin:0;font-weight:700;font-size:19px;line-height:1.3">Growing means hiring.</p>
+        <p style="margin:0;color:#55555C;font-size:16px">And training every new coach in your methods.</p>
+      </li>
+      <li style="background:#F4F2F0;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:12px">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12"></path><path d="M4 14h9"></path><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"></path></svg>
+        <p style="margin:0;font-weight:700;font-size:19px;line-height:1.3">You run out of time to sell.</p>
+        <p style="margin:0;color:#55555C;font-size:16px">Your hours go into programming, not into winning new clients.</p>
+      </li>
+    </ul>
+    <p style="margin:clamp(40px,6vw,56px) 0 0;max-width:860px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.08;text-transform:uppercase;color:#55555C;text-wrap:balance">Your method isn’t the problem. <span style="color:#000">Personalized strength & conditioning done by hand just doesn’t scale.</span></p>
+  </div>
+</section>
+
+<section aria-labelledby="ba-title" style="padding:clamp(80px,11vw,136px) 0;background:#F4F2F0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <h2 id="ba-title" style="margin:0 0 clamp(32px,5vw,56px);font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:0.95;letter-spacing:-0.01em">Fewer hours programming. More hours selling.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:12px">
+      <div style="background:#FFFFFF;border-radius:12px;padding:clamp(24px,3.5vw,40px)">
+        <h3 style="margin:0 0 20px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:26px;text-transform:uppercase;color:#55555C">Without BIVO Coach</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;color:#55555C">
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #E7E3E0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#55555C" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>You program every plan by hand</li>
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #E7E3E0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#55555C" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>You readjust for every niggle, trip or equipment change</li>
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #E7E3E0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#55555C" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>Growing = hiring</li>
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #E7E3E0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#55555C" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>Data scattered across WhatsApp and Excel</li>
+          <li style="display:flex;gap:14px;padding:14px 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#55555C" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>Strength & conditioning as a cost</li>
+        </ul>
+      </div>
+      <div style="background:#000;color:#FFFFFF;border-radius:12px;padding:clamp(24px,3.5vw,40px)">
+        <h3 style="margin:0 0 20px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:26px;text-transform:uppercase;color:#39FF14">With BIVO Coach</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #2A2A2A"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>The personalized plan is generated automatically</li>
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #2A2A2A"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>The athlete reports it in the app and the plan adapts itself</li>
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #2A2A2A"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Growing = supervising more athletes</li>
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #2A2A2A"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Compliance, fatigue, tests and progress in one dashboard</li>
+          <li style="display:flex;gap:14px;padding:14px 0;font-weight:700"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Strength & conditioning as a service you sell</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="como-funciona" aria-labelledby="vppr-title" style="padding:clamp(80px,11vw,136px) 0;background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#55555C">How it works · VPPR methodology</p>
+    <h2 id="vppr-title" style="margin:0;max-width:980px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:0.95;letter-spacing:-0.01em;text-wrap:balance">BIVO programs and adapts. <span style="background:linear-gradient(transparent 58%,#39FF14 58%,#39FF14 92%,transparent 92%)">You just supervise.</span></h2>
+    <p style="margin:24px 0 clamp(48px,7vw,72px);font-size:19px;color:#55555C;max-width:640px">Built on VPPR, the methodology Toni Bota uses with professional players.</p>
+    <div ref="{{ vpprEl }}" style="position:relative">
+      <sc-if value="{{ vpprDesk }}" hint-placeholder-val="{{ true }}">
+        <div aria-hidden="true" style="position:absolute;left:28px;right:28px;top:28px;height:2px;background:#E7E3E0"><div style="height:2px;width:{{ vpprW }};background:#000;transition:width 1400ms cubic-bezier(0.22,1,0.36,1)"></div></div>
+      </sc-if>
+      <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:40px 32px;position:relative">
+        <li style="display:flex;flex-direction:column;gap:14px"><span style="width:56px;height:56px;border-radius:100px;background:#000;color:#39FF14;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px">V</span><h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:28px;line-height:1">Assess</h3><p style="margin:0;color:#55555C;font-size:16px;text-wrap:pretty">Each athlete completes their profile in the app: injuries, mobility, level, equipment, available days and goals.</p></li>
+        <li style="display:flex;flex-direction:column;gap:14px"><span style="width:56px;height:56px;border-radius:100px;background:#000;color:#39FF14;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px">P</span><h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:28px;line-height:1">Prioritize</h3><p style="margin:0;color:#55555C;font-size:16px;text-wrap:pretty">BIVO identifies what each athlete needs to work on to perform and prevent injuries in their sport.</p></li>
+        <li style="display:flex;flex-direction:column;gap:14px"><span style="width:56px;height:56px;border-radius:100px;background:#000;color:#39FF14;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px">P</span><h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:28px;line-height:1">Program</h3><p style="margin:0;color:#55555C;font-size:16px;text-wrap:pretty">Builds their personalized plan from over <strong style="color:#000">1,200 racket-specific</strong> exercises.</p></li>
+        <li style="display:flex;flex-direction:column;gap:14px"><span style="width:56px;height:56px;border-radius:100px;background:#000;color:#39FF14;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px">R</span><h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:28px;line-height:1">Quantify and reprogram</h3><p style="margin:0;color:#55555C;font-size:16px;text-wrap:pretty">Tracks load, compliance and tests, and keeps readjusting the plan.</p></li>
+      </ol>
+    </div>
+    <div style="margin-top:clamp(48px,7vw,72px);display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between;padding-top:32px;border-top:1px solid #E7E3E0">
+      <p style="margin:0;max-width:640px;font-size:19px;font-weight:500">AI builds and adapts. You supervise, edit and decide. And you spend your time on what grows your business: selling.</p>
+      <a href="#diagnostico" onClick="{{ goTo }}" data-target="diagnostico" data-testid="cta-vppr" style="display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 28px;border-radius:100px;background:#39FF14;color:#000;font-weight:700;font-size:17px;text-decoration:none;transition:filter 150ms ease-out,transform 150ms ease-out" style-hover="filter:brightness(1.05)" style-active="transform:scale(0.97)">Book your free assessment <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="adapt-title" style="padding:clamp(80px,11vw,136px) 0;background:#000;color:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px 72px;align-items:center">
+    <div>
+      <p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#39FF14">What happens when you’re not around</p>
+      <h2 id="adapt-title" style="margin:0 0 20px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(38px,5vw,64px);line-height:0.95;letter-spacing:-0.01em;text-wrap:balance">Injured, traveling or missing equipment? The plan adapts itself. <span style="color:#39FF14">No messages to you.</span></h2>
+      <p style="margin:0 0 32px;color:#A1A1AA;font-size:18px">No messages, no calls, nothing for you to redo.</p>
+      <div role="tablist" aria-label="Adaptation scenarios" aria-orientation="vertical" style="display:flex;flex-direction:column;gap:8px">
+        <button type="button" role="tab" id="tab-scen-0" aria-controls="panel-scen" aria-selected="{{ st.s0.sel }}" tabindex="{{ st.s0.ti }}" data-i="0" onClick="{{ setScen }}" onKeyDown="{{ tabKey }}" style="text-align:left;padding:18px 20px;border-radius:12px;border:1px solid {{ st.s0.bd }};background:{{ st.s0.bg }};color:{{ st.s0.fg }};font:inherit;cursor:pointer;transition:background 200ms ease-out,border-color 200ms ease-out;display:flex;flex-direction:column;gap:6px">
+          <span style="font-weight:700;font-size:17px;color:#FFFFFF">Discomfort</span>
+          <sc-if value="{{ showS.s0 }}" hint-placeholder-val="{{ true }}"><span style="font-size:15px;line-height:1.5">"My knee is bothering me." → Exercises that load it are swapped out. → It shows up in their tracking.</span></sc-if>
+        </button>
+        <button type="button" role="tab" id="tab-scen-1" aria-controls="panel-scen" aria-selected="{{ st.s1.sel }}" tabindex="{{ st.s1.ti }}" data-i="1" onClick="{{ setScen }}" onKeyDown="{{ tabKey }}" style="text-align:left;padding:18px 20px;border-radius:12px;border:1px solid {{ st.s1.bd }};background:{{ st.s1.bg }};color:{{ st.s1.fg }};font:inherit;cursor:pointer;transition:background 200ms ease-out,border-color 200ms ease-out;display:flex;flex-direction:column;gap:6px">
+          <span style="font-weight:700;font-size:17px;color:#FFFFFF">Travel, tournament or no usual equipment</span>
+          <sc-if value="{{ showS.s1 }}" hint-placeholder-val="{{ false }}"><span style="font-size:15px;line-height:1.5">"I’m competing away this week and the hotel only has dumbbells." → They select their equipment and the session is rebuilt. → You still see whether they complete it.</span></sc-if>
+        </button>
+        <button type="button" role="tab" id="tab-scen-2" aria-controls="panel-scen" aria-selected="{{ st.s2.sel }}" tabindex="{{ st.s2.ti }}" data-i="2" onClick="{{ setScen }}" onKeyDown="{{ tabKey }}" style="text-align:left;padding:18px 20px;border-radius:12px;border:1px solid {{ st.s2.bd }};background:{{ st.s2.bg }};color:{{ st.s2.fg }};font:inherit;cursor:pointer;transition:background 200ms ease-out,border-color 200ms ease-out;display:flex;flex-direction:column;gap:6px">
+          <span style="font-weight:700;font-size:17px;color:#FFFFFF">Exercise swap</span>
+          <sc-if value="{{ showS.s2 }}" hint-placeholder-val="{{ false }}"><span style="font-size:15px;line-height:1.5">"I don’t enjoy this exercise." → They swap it for another that works exactly the same thing. → Their plan stays intact, their way.</span></sc-if>
+        </button>
+        <button type="button" role="tab" id="tab-scen-3" aria-controls="panel-scen" aria-selected="{{ st.s3.sel }}" tabindex="{{ st.s3.ti }}" data-i="3" onClick="{{ setScen }}" onKeyDown="{{ tabKey }}" style="text-align:left;padding:18px 20px;border-radius:12px;border:1px solid {{ st.s3.bd }};background:{{ st.s3.bg }};color:{{ st.s3.fg }};font:inherit;cursor:pointer;transition:background 200ms ease-out,border-color 200ms ease-out;display:flex;flex-direction:column;gap:6px">
+          <span style="font-weight:700;font-size:17px;color:#FFFFFF">Fewer days</span>
+          <sc-if value="{{ showS.s3 }}" hint-placeholder-val="{{ false }}"><span style="font-size:15px;line-height:1.5">"I can only train two days this week." → The plan is redistributed across their schedule. → You don’t touch a thing unless you want to.</span></sc-if>
+        </button>
+      </div>
+    </div>
+    <div id="panel-scen" role="tabpanel" aria-labelledby="adapt-title" style="display:flex;justify-content:center">
+      <div style="width:min(100%,330px)">
+        <dc-import name="PhoneMockup" src="{{ scenSrc }}" alt="{{ scenAlt }}" hint-size="100%,700px"></dc-import>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="producto" aria-labelledby="panel-title" style="padding:clamp(80px,11vw,136px) 0;background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#55555C">Inside BIVO Coach</p>
+    <h2 id="panel-title" style="margin:0 0 32px;max-width:980px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:0.95;letter-spacing:-0.01em;text-wrap:balance;">Know who’s training, who isn’t and who needs attention. <span style="background:linear-gradient(transparent 58%,#39FF14 58%,#39FF14 92%,transparent 92%)">At a glance.</span></h2>
+    <div role="tablist" aria-label="BIVO Coach screens" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
+      <button type="button" role="tab" id="tab-tour-0" aria-controls="panel-tour" aria-selected="{{ tt.t0.sel }}" tabindex="{{ tt.t0.ti }}" data-i="0" onClick="{{ setTour }}" onKeyDown="{{ tourKey }}" style="min-height:48px;padding:0 22px;border-radius:100px;border:1px solid {{ tt.t0.bd }};background:{{ tt.t0.bg }};color:{{ tt.t0.fg }};font:inherit;font-weight:700;font-size:15px;cursor:pointer;transition:background 200ms ease-out,color 200ms ease-out">My athletes</button>
+      <button type="button" role="tab" id="tab-tour-1" aria-controls="panel-tour" aria-selected="{{ tt.t1.sel }}" tabindex="{{ tt.t1.ti }}" data-i="1" onClick="{{ setTour }}" onKeyDown="{{ tourKey }}" style="min-height:48px;padding:0 22px;border-radius:100px;border:1px solid {{ tt.t1.bd }};background:{{ tt.t1.bg }};color:{{ tt.t1.fg }};font:inherit;font-weight:700;font-size:15px;cursor:pointer;transition:background 200ms ease-out,color 200ms ease-out">Planning</button>
+      <button type="button" role="tab" id="tab-tour-2" aria-controls="panel-tour" aria-selected="{{ tt.t2.sel }}" tabindex="{{ tt.t2.ti }}" data-i="2" onClick="{{ setTour }}" onKeyDown="{{ tourKey }}" style="min-height:48px;padding:0 22px;border-radius:100px;border:1px solid {{ tt.t2.bd }};background:{{ tt.t2.bg }};color:{{ tt.t2.fg }};font:inherit;font-weight:700;font-size:15px;cursor:pointer;transition:background 200ms ease-out,color 200ms ease-out">Athlete profile</button>
+    </div>
+    <div id="panel-tour" role="tabpanel" tabindex="0">
+      <sc-if value="{{ showT.t0 }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;gap:24px"><p style="margin:0;max-width:720px;font-size:18px;color:#55555C"><strong style="color:#000">All your athletes at a glance.</strong> Compliance, streak, status and assigned coach. Drag them into groups.</p><figure style="margin:0 auto;max-width:1024px;width:100%;border-radius:14px;overflow:hidden;border:1px solid #DAD5D1;box-shadow:0 40px 80px -40px rgba(0,0,0,0.35);background:#F4F2F0"><div aria-hidden="true" style="height:32px;display:flex;align-items:center;gap:6px;padding:0 14px;background:#F4F2F0;border-bottom:1px solid #E7E3E0"><span style="width:10px;height:10px;border-radius:100px;background:#DAD5D1"></span><span style="width:10px;height:10px;border-radius:100px;background:#DAD5D1"></span><span style="width:10px;height:10px;border-radius:100px;background:#DAD5D1"></span></div><dc-import name="CoachAthletes" lang="en" hint-size="100%,600px"></dc-import></figure></div></sc-if>
+      <sc-if value="{{ showT.t1 }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:24px"><p style="margin:0;max-width:720px;font-size:18px;color:#55555C"><strong style="color:#000">Every athlete’s season, planned.</strong> See what they’ve completed and what’s still pending. Drag to move sessions or add events like a championship.</p><figure style="margin:0 auto;max-width:1024px;width:100%;border-radius:14px;overflow:hidden;border:1px solid #DAD5D1;box-shadow:0 40px 80px -40px rgba(0,0,0,0.35);background:#F4F2F0"><div aria-hidden="true" style="height:32px;display:flex;align-items:center;gap:6px;padding:0 14px;background:#F4F2F0;border-bottom:1px solid #E7E3E0"><span style="width:10px;height:10px;border-radius:100px;background:#DAD5D1"></span><span style="width:10px;height:10px;border-radius:100px;background:#DAD5D1"></span><span style="width:10px;height:10px;border-radius:100px;background:#DAD5D1"></span></div><img src="/coach/assets/coach-planificacion-hd.png" alt="Monthly planning calendar for an athlete in BIVO Coach" width="1776" height="886" decoding="async" style="display:block;width:100%;height:auto;image-rendering:auto"></figure></div></sc-if>
+      <sc-if value="{{ showT.t2 }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:24px"><p style="margin:0;max-width:720px;font-size:18px;color:#55555C"><strong style="color:#000">Everything BIVO needs to personalize.</strong> Available days, level, equipment, pain and mobility. If something changes, BIVO asks whether you want to regenerate the plan.</p><figure style="margin:0 auto;max-width:1024px;width:100%;border-radius:14px;overflow:hidden;border:1px solid #DAD5D1;box-shadow:0 40px 80px -40px rgba(0,0,0,0.35);background:#F4F2F0"><div aria-hidden="true" style="height:32px;display:flex;align-items:center;gap:6px;padding:0 14px;background:#F4F2F0;border-bottom:1px solid #E7E3E0"><span style="width:10px;height:10px;border-radius:100px;background:#DAD5D1"></span><span style="width:10px;height:10px;border-radius:100px;background:#DAD5D1"></span><span style="width:10px;height:10px;border-radius:100px;background:#DAD5D1"></span></div><img src="/coach/assets/coach-ficha.png" alt="Athlete profile: training days, level, equipment, pain and mobility" width="1914" height="952" decoding="async" style="display:block;width:100%;height:auto;image-rendering:auto"></figure></div></sc-if>
+    </div>
+  </div>
+</section>
+
+<section id="funcionalidades" aria-labelledby="func-title" style="padding:clamp(80px,11vw,136px) 0;background:#F4F2F0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#55555C">Features</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px 64px;align-items:end;margin-bottom:clamp(40px,6vw,56px)">
+      <h2 id="func-title" style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:0.95;letter-spacing:-0.01em;text-wrap:balance;">Coach 20 or 200 athletes in the same amount of time.</h2>
+      <p style="margin:0;font-size:18px;color:#55555C">A tool for you and an app for your athletes. The repetitive work is automated; you make the calls.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px">
+      <div style="background:#FFFFFF;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:14px"><span style="width:48px;height:48px;border-radius:12px;background:#000;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></span><h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:28px;line-height:1">Automated planning</h3><p style="margin:0;color:#55555C;font-size:16px">BIVO builds and adapts every athlete’s plan. You never program from scratch.</p><ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid #E7E3E0;display:flex;flex-direction:column;gap:8px;font-size:15px"><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Automated personalized plans</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Adapts to discomfort</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Equipment changes and travel</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>1,200+ racket-sport exercises</li></ul></div>
+      <div style="background:#FFFFFF;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:14px"><span style="width:48px;height:48px;border-radius:12px;background:#000;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></span><h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:28px;line-height:1">Tracking</h3><p style="margin:0;color:#55555C;font-size:16px">Know who’s training, how they’re improving and who needs attention.</p><ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid #E7E3E0;display:flex;flex-direction:column;gap:8px;font-size:15px"><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Compliance and progress</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Load and fatigue</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Physical tests</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Athlete stats</li></ul></div>
+      <div style="background:#FFFFFF;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:14px"><span style="width:48px;height:48px;border-radius:12px;background:#000;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg></span><h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:28px;line-height:1">Management</h3><p style="margin:0;color:#55555C;font-size:16px">Organize athletes, groups, sessions and your coaching staff.</p><ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid #E7E3E0;display:flex;flex-direction:column;gap:8px;font-size:15px"><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Calendar per athlete</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Groups</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Your own workouts</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Coaching staff with roles</li></ul></div>
+      <div style="background:#FFFFFF;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:14px"><span style="width:48px;height:48px;border-radius:12px;background:#000;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"></rect><path d="M12 18h.01"></path></svg></span><h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:28px;line-height:1">Athlete app</h3><p style="margin:0;color:#55555C;font-size:16px">Video for every exercise, weight logging, swaps and stats.</p><ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid #E7E3E0;display:flex;flex-direction:column;gap:8px;font-size:15px"><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Direct chat</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Notifications</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Mobility sessions</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Change of direction</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Recovery</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Warm-ups</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Speed</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Footwork</li><li style="display:flex;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:3px"><path d="M20 6 9 17l-5-5"></path></svg>Injury prevention</li></ul></div>
+    </div>
+    <div style="margin-top:clamp(40px,6vw,56px);display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center"><a href="#diagnostico" onClick="{{ goTo }}" data-target="diagnostico" data-testid="cta-funcionalidades" style="display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 28px;border-radius:100px;background:#39FF14;color:#000;font-weight:700;font-size:17px;text-decoration:none;transition:filter 150ms ease-out,transform 150ms ease-out" style-hover="filter:brightness(1.05)" style-active="transform:scale(0.97)">Book your free assessment <span aria-hidden="true">→</span></a><span style="font-size:14px;color:#55555C">We’ll show you BIVO Coach with your own athletes.</span></div>
+  </div>
+</section>
+
+
+
+<section id="testimonios" aria-labelledby="testimonio-title" style="padding:clamp(80px,11vw,136px) 0;background:#000;color:#FFFFFF;overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#39FF14">Testimonials</p>
+    <h2 id="testimonio-title" style="margin:0 0 16px;max-width:900px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:0.95;letter-spacing:-0.01em;text-wrap:balance;">Don’t just take our word for it.</h2>
+    <p style="margin:0 0 clamp(40px,6vw,56px);max-width:620px;font-size:18px;color:#A1A1AA">A coach who uses BIVO Coach, and athletes who train with the app every week.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px;align-items:start">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;max-width:380px">
+        <span style="align-self:flex-start;padding:6px 12px;border-radius:100px;background:#39FF14;color:#000;font-size:13px;font-weight:700">Coach · BIVO Coach</span>
+        <div style="position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#1F1F1F"><video src="/coach/assets/testimonio-entrenador.mp4#t=0.5" poster="/coach/assets/testimonio-entrenador-poster.jpg" controls="{{ true }}" playsInline="{{ true }}" preload="metadata" aria-label="Video testimonial from Luis, a racket-sports coach who uses BIVO Coach" data-testid="video-testimonio-coach" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video></div>
+        <figcaption><strong style="display:block;font-size:16px">Luis</strong><span style="font-size:14px;color:#A1A1AA">Racket-sports coach</span></figcaption>
+      </figure>
+      <div style="grid-column:span 2;min-width:0">
+        <p style="margin:0 0 14px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#A1A1AA">Athletes using the app</p>
+        <div role="region" aria-label="Athlete testimonials, swipe to see more" tabindex="0" style="display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin;scrollbar-color:#2A2A2A transparent">
+          <figure style="margin:0;flex:0 0 clamp(180px,18vw,210px);scroll-snap-align:start;display:flex;flex-direction:column;gap:10px"><div style="position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#1F1F1F"><video src="/coach/assets/testimonio-imanol.mp4#t=0.5" poster="/coach/assets/testimonio-imanol-poster.jpg" controls="{{ true }}" playsInline="{{ true }}" preload="metadata" aria-label="Video testimonial from Imanol, Tennis" data-testid="video-imanol" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#1F1F1F"></video></div><figcaption><strong style="display:block;font-size:15px">Imanol</strong><span style="font-size:13px;color:#A1A1AA">Tennis</span></figcaption></figure>
+          <figure style="margin:0;flex:0 0 clamp(180px,18vw,210px);scroll-snap-align:start;display:flex;flex-direction:column;gap:10px"><div style="position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#1F1F1F"><video src="/coach/assets/testimonio-nura.mp4#t=0.5" poster="/coach/assets/testimonio-nura-poster.jpg" controls="{{ true }}" playsInline="{{ true }}" preload="metadata" aria-label="Video testimonial from Nura Padilla, Padel" data-testid="video-nura" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#1F1F1F"></video></div><figcaption><strong style="display:block;font-size:15px">Nura Padilla</strong><span style="font-size:13px;color:#A1A1AA">Padel</span></figcaption></figure>
+          <figure style="margin:0;flex:0 0 clamp(180px,18vw,210px);scroll-snap-align:start;display:flex;flex-direction:column;gap:10px"><div style="position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#1F1F1F"><video src="/coach/assets/testimonio-sara.mp4#t=0.5" poster="/coach/assets/testimonio-sara-poster.jpg" controls="{{ true }}" playsInline="{{ true }}" preload="metadata" aria-label="Video testimonial from Sara Chumillas, Pickleball" data-testid="video-sara" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#1F1F1F"></video></div><figcaption><strong style="display:block;font-size:15px">Sara Chumillas</strong><span style="font-size:13px;color:#A1A1AA">Pickleball</span></figcaption></figure>
+          <figure style="margin:0;flex:0 0 clamp(180px,18vw,210px);scroll-snap-align:start;display:flex;flex-direction:column;gap:10px"><div style="position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#1F1F1F"><video src="/coach/assets/testimonio-paloma.mp4#t=0.5" poster="/coach/assets/testimonio-paloma-poster.jpg" controls="{{ true }}" playsInline="{{ true }}" preload="metadata" aria-label="Video testimonial from Paloma García, Padel" data-testid="video-paloma" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#1F1F1F"></video></div><figcaption><strong style="display:block;font-size:15px">Paloma García</strong><span style="font-size:13px;color:#A1A1AA">Padel</span></figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resultados" aria-labelledby="negocio-title" style="padding:clamp(80px,11vw,136px) 0;border-top:1px solid #2A2A2A;background:#000;color:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#39FF14">Business model</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px 64px;align-items:end;margin-bottom:clamp(40px,6vw,56px)">
+      <h2 id="negocio-title" style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:0.95;letter-spacing:-0.01em;text-wrap:balance">It’s not a cost. It’s a new revenue stream <span style="color:#39FF14">that you sell.</span></h2>
+      <p style="margin:0;font-size:18px;color:#A1A1AA;text-wrap:pretty">You offer personalized strength & conditioning under your brand, at the price you set. Because programming is automatic, coaching 20 or 200 athletes doesn’t multiply your hours.</p>
+    </div>
+    <div style="border:1px solid #2A2A2A;border-radius:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));overflow:hidden">
+      <div style="padding:clamp(24px,4vw,44px);background:#0F0F0F;display:flex;flex-direction:column;gap:32px">
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:12px">
+            <label for="calc-athletes" style="font-weight:500">Athletes you’d offer strength & conditioning to</label>
+            <output for="calc-athletes" style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:36px;line-height:1">{{ calc.athletesTxt }}</output>
+          </div>
+          <input id="calc-athletes" type="range" min="5" max="300" step="1" value="{{ calc.athletes }}" onChange="{{ onAthletes }}" data-testid="calc-slider" style="width:100%;height:32px;margin:0;cursor:pointer;accent-color:#39FF14">
+          <div style="display:flex;justify-content:space-between;font-size:12px;color:#A1A1AA"><span>5</span><span>300</span></div>
+        </div>
+        <div>
+          <label for="calc-price" style="display:block;font-weight:500;margin-bottom:10px">Monthly price you’d charge per athlete (€)</label>
+          <div style="display:flex;align-items:center;border:1px solid #2A2A2A;border-radius:8px;background:#000;max-width:260px">
+            <input id="calc-price" type="number" inputmode="numeric" min="0" step="1" value="{{ calc.price }}" onChange="{{ onPrice }}" aria-describedby="calc-price-hint" data-testid="calc-price" style="flex:1;min-width:0;height:52px;padding:0 16px;border:0;background:transparent;color:#FFFFFF;font:inherit;font-size:20px;font-weight:700;outline:none">
+            <span style="padding:0 16px;color:#A1A1AA">€/month</span>
+          </div>
+          <p id="calc-price-hint" style="margin:8px 0 0;font-size:12px;color:#A1A1AA">[DATA: default value, CONFIRM]</p>
+        </div>
+      </div>
+      <div style="padding:clamp(24px,4vw,44px);border-left:1px solid #2A2A2A;display:flex;flex-direction:column;justify-content:space-between;gap:28px" aria-live="polite">
+        <div>
+          <p style="margin:0 0 8px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#A1A1AA">Potential revenue</p>
+          <p style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(56px,8vw,104px);line-height:0.9;color:#39FF14;font-variant-numeric:tabular-nums">€{{ calc.monthly }}<span style="font-size:0.4em;color:#A1A1AA;font-weight:700"> /month</span></p>
+          <p style="margin:12px 0 0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(26px,3vw,36px);font-variant-numeric:tabular-nums">€{{ calc.yearly }} /year</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <p style="margin:0;font-size:15px;color:#A1A1AA">Your BIVO Coach license scales with your number of athletes. We work it out with you on the assessment call.</p>
+          <button type="button" onClick="{{ calcCall }}" data-testid="cta-calculadora" style="align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 28px;border-radius:100px;border:0;background:#39FF14;color:#000;font:inherit;font-weight:700;font-size:17px;cursor:pointer;transition:filter 150ms ease-out,transform 150ms ease-out" style-hover="filter:brightness(1.05)" style-active="transform:scale(0.97)">Work out my numbers on a call <span aria-hidden="true">→</span></button>
+          <p style="margin:0;font-size:12px;color:#A1A1AA">Indicative estimate. Excludes costs and does not guarantee results.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="toni-title" style="padding:clamp(80px,11vw,136px) 0;background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:48px 72px;align-items:center">
+    <div style="position:relative;border-radius:16px;background:#000;overflow:hidden;aspect-ratio:4/5;display:flex;align-items:flex-end;justify-content:center">
+      <span aria-hidden="true" style="position:absolute;left:24px;top:20px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(64px,9vw,120px);line-height:0.85;text-transform:uppercase;color:#1F1F1F">ATP<br>WTA</span>
+      <svg aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"></path></svg><img src="/coach/assets/toni-bota-web.png" alt="Toni Bota, BIVO co-founder and S&C coach" width="900" height="1200" style="position:relative;width:92%;height:auto;display:block">
+      <span style="position:absolute;left:20px;bottom:20px;padding:8px 14px;border-radius:100px;background:#39FF14;color:#000;font-weight:700;font-size:14px">Trains ATP and WTA players</span>
+    </div>
+    <div>
+      <p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#55555C">Who’s behind it</p>
+      <h2 id="toni-title" style="margin:0 0 24px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:0.95;letter-spacing:-0.01em;text-wrap:balance;font-size:clamp(40px,5.4vw,68px)">Pro-tour methodology, <span style="background:linear-gradient(transparent 58%,#39FF14 58%,#39FF14 92%,transparent 92%)">within your reach.</span></h2>
+      <p style="margin:0 0 28px;color:#55555C;font-size:18px;text-wrap:pretty"><strong style="color:#000">Toni Bota, BIVO co-founder and S&C coach.</strong> He trains players on the ATP and WTA tours. BIVO was born from bringing that same method to anyone who offers strength & conditioning.</p>
+      <blockquote style="margin:0 0 28px;padding:0 0 0 20px;border-left:3px solid #000"><p style="margin:0 0 8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(24px,2.6vw,32px);line-height:1.1;text-transform:uppercase">"A professional player doesn’t train with a generic plan. Your players shouldn’t either."</p><footer style="font-size:14px;color:#55555C">Toni Bota · <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">[CONFIRM WITH TONI]</span></footer></blockquote>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px">
+        <li style="padding:8px 14px;background:#F4F2F0;border-radius:100px;font-size:14px">Federació de Pàdel de les Illes Balears · ~7,000 members</li>
+        <li style="padding:8px 14px;background:#F4F2F0;border-radius:100px;font-size:14px">Federació Balear de Bàdminton</li>
+        <li style="padding:8px 14px;background:#F4F2F0;border-radius:100px;font-size:14px">South Summit Madrid</li>
+      </ul>
+    </div>
+  </div>
+  <div style="max-width:1240px;margin:clamp(40px,6vw,64px) auto 0;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px">
+    <img src="/coach/assets/concentracion-febab-1.jpg" alt="High-performance camp with the Federació Balear de Bàdminton" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px">
+    <img src="/coach/assets/concentracion-febab-2.jpg" alt="Toni Bota explaining the session to badminton players in the gym" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px">
+  </div>
+</section>
+
+<section aria-labelledby="reco-title" style="padding:clamp(64px,9vw,112px) 0;background:#F4F2F0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:40px 72px;align-items:center">
+    <img src="/coach/assets/premio-camara-web.jpg" alt="BIVO team receiving the Impulsa Startup 2025 award from the Spanish Chamber of Commerce" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px">
+    <div>
+      <p style="margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#55555C">Recognition</p>
+      <h2 id="reco-title" style="margin:0 0 24px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;line-height:0.95;letter-spacing:-0.01em;text-wrap:balance;font-size:clamp(36px,4.8vw,60px)">Impulsa Startup Award 2025 <span style="background:linear-gradient(transparent 58%,#39FF14 58%,#39FF14 92%,transparent 92%)">from the Spanish Chamber of Commerce.</span></h2>
+      <p style="margin:0 0 32px;font-size:18px;color:#55555C;max-width:520px">National recognition for the project and the team behind BIVO.</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px;padding-top:24px;border-top:1px solid #DAD5D1">
+        <span style="display:flex;align-items:center;height:64px;padding:0 20px;background:#FFFFFF;border-radius:12px"><img src="/coach/assets/logo-emprenbit.png" alt="#EmprenBIT, Parc Bit program" width="192" height="38" style="display:block;width:192px;height:auto"></span>
+        <p style="margin:0;font-size:16px"><strong>Incubated at Parc Bit</strong><span style="display:block;color:#55555C;font-size:14px">#EmprenBIT program · Mallorca</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section aria-labelledby="fit-title" style="padding:clamp(80px,11vw,136px) 0;background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <h2 id="fit-title" style="margin:0 0 clamp(32px,5vw,48px);font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:0.95;letter-spacing:-0.01em">BIVO Coach isn’t for everyone.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:12px">
+      <div style="background:#F4F2F0;border-radius:12px;padding:clamp(24px,3.5vw,40px)">
+        <h3 style="margin:0 0 20px;font-size:19px">Yes, if…</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px">
+          <li style="display:flex;gap:12px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>You want your athletes’ strength & conditioning to be personalized.</span></li>
+          <li style="display:flex;gap:12px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>You want to track and manage all your athletes from one place.</span></li>
+          <li style="display:flex;gap:12px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg><span>You want to win back time and stop building and adjusting programs and workouts by hand.</span></li>
+        </ul>
+      </div>
+      <div style="border:1px solid #E7E3E0;border-radius:12px;padding:clamp(24px,3.5vw,40px)">
+        <h3 style="margin:0 0 20px;font-size:19px;color:#55555C">No, if…</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;color:#55555C">
+          <li style="display:flex;gap:12px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#55555C" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span>You’re fine giving everyone the same generic plan.</span></li>
+          <li style="display:flex;gap:12px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#55555C" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span>You prefer managing each athlete across spreadsheets, chats and scattered files.</span></li>
+          <li style="display:flex;gap:12px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#55555C" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span>You want to keep spending hours building and adjusting programs by hand.</span></li>
+          <li style="display:flex;gap:12px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#55555C" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span>You want to keep losing money.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="faq-title" style="padding:clamp(80px,11vw,136px) 0;background:#FFFFFF;border-top:1px solid #E7E3E0">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:40px 72px;align-items:start">
+    <div>
+      <h2 id="faq-title" style="margin:0 0 20px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:0.95;letter-spacing:-0.01em">Frequently asked questions</h2>
+      <p style="margin:0 0 16px;color:#55555C">Another question? Message us on WhatsApp.</p>
+      <a href="{{ waHref }}" target="_blank" rel="noopener" onClick="{{ waClick }}" data-testid="whatsapp-faq" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 24px;border-radius:100px;border:1px solid #000;color:#000;font-weight:700;text-decoration:none;transition:background 150ms ease-out,color 150ms ease-out" style-hover="background:#000;color:#FFFFFF"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>Message us on WhatsApp</a>
+    </div>
+    <div style="grid-column:span 2;min-width:0;border-top:1px solid #E7E3E0">
+      <div style="border-bottom:1px solid #E7E3E0"><h3 style="margin:0"><button type="button" id="faq-q3" aria-expanded="{{ f.e3 }}" aria-controls="faq-a3" data-i="3" onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;color:#000;font:inherit;font-size:18px;font-weight:700;text-align:left;cursor:pointer">How much does it cost?<span aria-hidden="true" style="font-size:28px;font-weight:400;transform:{{ f.r3 }};transition:transform 200ms ease-out;line-height:1">+</span></button></h3><sc-if value="{{ f.o3 }}" hint-placeholder-val="{{ false }}"><div id="faq-a3" role="region" aria-labelledby="faq-q3" style="padding:0 48px 24px 0;color:#55555C">It depends on the number of athletes and how you want to use it. We go through it on the assessment call and send you a tailored proposal.</div></sc-if></div>
+      <div style="border-bottom:1px solid #E7E3E0"><h3 style="margin:0"><button type="button" id="faq-q0" aria-expanded="{{ f.e0 }}" aria-controls="faq-a0" data-i="0" onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;color:#000;font:inherit;font-size:18px;font-weight:700;text-align:left;cursor:pointer">Does BIVO replace my S&C coach or my coaching staff?<span aria-hidden="true" style="font-size:28px;font-weight:400;transform:{{ f.r0 }};transition:transform 200ms ease-out;line-height:1">+</span></button></h3><sc-if value="{{ f.o0 }}" hint-placeholder-val="{{ false }}"><div id="faq-a0" role="region" aria-labelledby="faq-q0" style="padding:0 48px 24px 0;color:#55555C">No. It multiplies their reach. BIVO builds and adapts the plans; you supervise, edit and bring your judgment.</div></sc-if></div>
+      <div style="border-bottom:1px solid #E7E3E0"><h3 style="margin:0"><button type="button" id="faq-q1" aria-expanded="{{ f.e1 }}" aria-controls="faq-a1" data-i="1" onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;color:#000;font:inherit;font-size:18px;font-weight:700;text-align:left;cursor:pointer">Can I create my own workouts or edit the ones BIVO creates?<span aria-hidden="true" style="font-size:28px;font-weight:400;transform:{{ f.r1 }};transition:transform 200ms ease-out;line-height:1">+</span></button></h3><sc-if value="{{ f.o1 }}" hint-placeholder-val="{{ false }}"><div id="faq-a1" role="region" aria-labelledby="faq-q1" style="padding:0 48px 24px 0;color:#55555C">Yes. You can edit any session, create your own and assign them to an athlete or a group.</div></sc-if></div>
+      <div style="border-bottom:1px solid #E7E3E0"><h3 style="margin:0"><button type="button" id="faq-q2" aria-expanded="{{ f.e2 }}" aria-controls="faq-a2" data-i="2" onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;color:#000;font:inherit;font-size:18px;font-weight:700;text-align:left;cursor:pointer">What happens if an athlete has discomfort or an injury?<span aria-hidden="true" style="font-size:28px;font-weight:400;transform:{{ f.r2 }};transition:transform 200ms ease-out;line-height:1">+</span></button></h3><sc-if value="{{ f.o2 }}" hint-placeholder-val="{{ false }}"><div id="faq-a2" role="region" aria-labelledby="faq-q2" style="padding:0 48px 24px 0;color:#55555C">They report it in the app and the plan adapts to avoid loading that area. BIVO does not diagnose or replace a healthcare professional: if injured, the athlete should see their doctor or physiotherapist.</div></sc-if></div>
+            <div style="border-bottom:1px solid #E7E3E0"><h3 style="margin:0"><button type="button" id="faq-q4" aria-expanded="{{ f.e4 }}" aria-controls="faq-a4" data-i="4" onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;color:#000;font:inherit;font-size:18px;font-weight:700;text-align:left;cursor:pointer">How many athletes can I manage?<span aria-hidden="true" style="font-size:28px;font-weight:400;transform:{{ f.r4 }};transition:transform 200ms ease-out;line-height:1">+</span></button></h3><sc-if value="{{ f.o4 }}" hint-placeholder-val="{{ false }}"><div id="faq-a4" role="region" aria-labelledby="faq-q4" style="padding:0 48px 24px 0;color:#55555C">As many as you need. Because programming and adaptation are automatic, growing doesn’t multiply your workload.</div></sc-if></div>
+      <div style="border-bottom:1px solid #E7E3E0"><h3 style="margin:0"><button type="button" id="faq-q5" aria-expanded="{{ f.e5 }}" aria-controls="faq-a5" data-i="5" onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;color:#000;font:inherit;font-size:18px;font-weight:700;text-align:left;cursor:pointer">How much can I charge my athletes?<span aria-hidden="true" style="font-size:28px;font-weight:400;transform:{{ f.r5 }};transition:transform 200ms ease-out;line-height:1">+</span></button></h3><sc-if value="{{ f.o5 }}" hint-placeholder-val="{{ false }}"><div id="faq-a5" role="region" aria-labelledby="faq-q5" style="padding:0 48px 24px 0;color:#55555C">You decide. It’s your service, at your price.</div></sc-if></div>
+      <div style="border-bottom:1px solid #E7E3E0"><h3 style="margin:0"><button type="button" id="faq-q6" aria-expanded="{{ f.e6 }}" aria-controls="faq-a6" data-i="6" onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;color:#000;font:inherit;font-size:18px;font-weight:700;text-align:left;cursor:pointer">How long does it take to get up and running?<span aria-hidden="true" style="font-size:28px;font-weight:400;transform:{{ f.r6 }};transition:transform 200ms ease-out;line-height:1">+</span></button></h3><sc-if value="{{ f.o6 }}" hint-placeholder-val="{{ false }}"><div id="faq-a6" role="region" aria-labelledby="faq-q6" style="padding:0 48px 24px 0;color:#55555C;font-family:ui-monospace,Menlo,monospace;font-size:13px">[DATA: onboarding timeline]</div></sc-if></div>
+      <div style="border-bottom:1px solid #E7E3E0"><h3 style="margin:0"><button type="button" id="faq-q7" aria-expanded="{{ f.e7 }}" aria-controls="faq-a7" data-i="7" onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;color:#000;font:inherit;font-size:18px;font-weight:700;text-align:left;cursor:pointer">Is there a minimum commitment?<span aria-hidden="true" style="font-size:28px;font-weight:400;transform:{{ f.r7 }};transition:transform 200ms ease-out;line-height:1">+</span></button></h3><sc-if value="{{ f.o7 }}" hint-placeholder-val="{{ false }}"><div id="faq-a7" role="region" aria-labelledby="faq-q7" style="padding:0 48px 24px 0;color:#55555C;font-family:ui-monospace,Menlo,monospace;font-size:13px">[DATA: commitment terms]</div></sc-if></div>
+      <div style="border-bottom:1px solid #E7E3E0"><h3 style="margin:0"><button type="button" id="faq-q8" aria-expanded="{{ f.e8 }}" aria-controls="faq-a8" data-i="8" onClick="{{ toggleFaq }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;background:none;border:0;color:#000;font:inherit;font-size:18px;font-weight:700;text-align:left;cursor:pointer">Is my data and my athletes’ data protected?<span aria-hidden="true" style="font-size:28px;font-weight:400;transform:{{ f.r8 }};transition:transform 200ms ease-out;line-height:1">+</span></button></h3><sc-if value="{{ f.o8 }}" hint-placeholder-val="{{ false }}"><div id="faq-a8" role="region" aria-labelledby="faq-q8" style="padding:0 48px 24px 0;color:#55555C">Yes. We comply with the GDPR and Spanish and European data protection law.</div></sc-if></div>
+    </div>
+  </div>
+</section>
+
+<section id="diagnostico" ref="{{ formEl }}" aria-labelledby="form-title" style="padding:clamp(80px,11vw,136px) 0;background:#000;color:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <h2 id="form-title" style="margin:0 0 20px;max-width:960px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(40px,6vw,76px);line-height:0.95;letter-spacing:-0.01em;text-wrap:balance">In 30 minutes you’ll know how many hours you win back <span style="color:#39FF14">and how much you can bill.</span></h2>
+    <p style="margin:0 0 clamp(40px,6vw,56px);font-size:19px;color:#A1A1AA;max-width:640px">Tell us about your business in 2 minutes and book your free assessment with our team.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:32px 56px;align-items:start">
+      <div style="grid-column:span 2;min-width:0;border:1px solid #2A2A2A;border-radius:12px;background:#0F0F0F;padding:clamp(20px,4vw,40px)">
+
+        <sc-if value="{{ r.form }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px">
+            <span style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#A1A1AA">{{ stepLabel }}</span>
+            <sc-if value="{{ showBack }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ back }}" data-testid="form-back" style="min-height:44px;padding:0 4px;background:none;border:0;color:#FFFFFF;font:inherit;font-size:15px;cursor:pointer;text-decoration:underline;text-underline-offset:4px">← Back</button></sc-if>
+          </div>
+          <div role="progressbar" aria-label="Form progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progressNum }}" style="height:4px;background:#2A2A2A;border-radius:100px;overflow:hidden;margin-bottom:32px"><div style="height:100%;width:{{ progress }};background:#39FF14;transition:width 300ms ease-out"></div></div>
+          <sc-if value="{{ hasCalcNote }}" hint-placeholder-val="{{ false }}"><p style="margin:0 0 20px;padding:12px 16px;border:1px solid #2A2A2A;border-radius:8px;font-size:14px;color:#A1A1AA">{{ calcNote }}</p></sc-if>
+
+          <sc-if value="{{ stepS.s1 }}" hint-placeholder-val="{{ true }}">
+            <fieldset data-testid="form-step-1" style="border:0;margin:0;padding:0">
+              <legend id="form-step-title" tabindex="-1" style="padding:0;margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3vw,36px);line-height:1">What’s your role?</legend>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:8px">
+                <button type="button" onClick="{{ pick }}" data-k="rol" data-v="Club director/manager" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Club director/manager</button>
+                <button type="button" onClick="{{ pick }}" data-k="rol" data-v="Academy lead" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Academy lead</button>
+                <button type="button" onClick="{{ pick }}" data-k="rol" data-v="Online coach/S&C coach" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Online coach/S&C coach</button>
+                <button type="button" onClick="{{ pick }}" data-k="rol" data-v="In-person coach" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">In-person coach</button>
+                <button type="button" onClick="{{ pick }}" data-k="rol" data-v="Federation" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Federation</button>
+                <button type="button" onClick="{{ pick }}" data-k="rol" data-v="I’m a player" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#A1A1AA;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">I’m a player</button>
+              </div>
+            </fieldset>
+          </sc-if>
+          <sc-if value="{{ stepS.s2 }}" hint-placeholder-val="{{ false }}">
+            <fieldset data-testid="form-step-2" style="border:0;margin:0;padding:0">
+              <legend id="form-step-title" tabindex="-1" style="padding:0;margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3vw,36px);line-height:1">What’s your main sport?</legend>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:8px">
+                <button type="button" onClick="{{ pick }}" data-k="deporte" data-v="Padel" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Padel</button>
+                <button type="button" onClick="{{ pick }}" data-k="deporte" data-v="Tennis" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Tennis</button>
+                <button type="button" onClick="{{ pick }}" data-k="deporte" data-v="Pickleball" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Pickleball</button>
+                <button type="button" onClick="{{ pick }}" data-k="deporte" data-v="Badminton" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Badminton</button>
+                <button type="button" onClick="{{ pick }}" data-k="deporte" data-v="Several" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Several</button>
+              </div>
+            </fieldset>
+          </sc-if>
+          <sc-if value="{{ stepS.s3 }}" hint-placeholder-val="{{ false }}">
+            <fieldset data-testid="form-step-3" style="border:0;margin:0;padding:0">
+              <legend id="form-step-title" tabindex="-1" style="padding:0;margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3vw,36px);line-height:1">How many athletes do you currently train?</legend>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:8px">
+                <button type="button" onClick="{{ pick }}" data-k="deportistas" data-v="1–20" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">1–20</button>
+                <button type="button" onClick="{{ pick }}" data-k="deportistas" data-v="21–50" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">21–50</button>
+                <button type="button" onClick="{{ pick }}" data-k="deportistas" data-v="51–150" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">51–150</button>
+                <button type="button" onClick="{{ pick }}" data-k="deportistas" data-v="151–500" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">151–500</button>
+                <button type="button" onClick="{{ pick }}" data-k="deportistas" data-v="500+" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">500+</button>
+              </div>
+            </fieldset>
+          </sc-if>
+          <sc-if value="{{ stepS.s4 }}" hint-placeholder-val="{{ false }}">
+            <fieldset data-testid="form-step-4" style="border:0;margin:0;padding:0">
+              <legend id="form-step-title" tabindex="-1" style="padding:0;margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3vw,36px);line-height:1">How do you handle strength & conditioning today?</legend>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:8px">
+                <button type="button" onClick="{{ pick }}" data-k="gestion" data-v="We don’t offer it" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">We don’t offer it</button>
+                <button type="button" onClick="{{ pick }}" data-k="gestion" data-v="Generic plans" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Generic plans</button>
+                <button type="button" onClick="{{ pick }}" data-k="gestion" data-v="A coach who programs by hand" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">A coach who programs by hand</button>
+                <button type="button" onClick="{{ pick }}" data-k="gestion" data-v="Another app or software" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Another app or software</button>
+                <button type="button" onClick="{{ pick }}" data-k="gestion" data-v="Other" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Other</button>
+              </div>
+            </fieldset>
+          </sc-if>
+          <sc-if value="{{ stepS.s5 }}" hint-placeholder-val="{{ false }}">
+            <sc-if value="{{ notFed }}" hint-placeholder-val="{{ true }}">
+              <fieldset data-testid="form-step-5" style="border:0;margin:0;padding:0">
+                <legend id="form-step-title" tabindex="-1" style="padding:0;margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3vw,36px);line-height:1">Approximate monthly revenue from your sports business</legend>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px">
+                  <button type="button" onClick="{{ pick }}" data-k="facturacion" data-v="<€3,000" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">&lt;€3,000</button>
+                  <button type="button" onClick="{{ pick }}" data-k="facturacion" data-v="€3,000–10,000" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">€3,000–10,000</button>
+                  <button type="button" onClick="{{ pick }}" data-k="facturacion" data-v="€10,000–30,000" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">€10,000–30,000</button>
+                  <button type="button" onClick="{{ pick }}" data-k="facturacion" data-v="€30,000+" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">€30,000+</button>
+                  <button type="button" onClick="{{ pick }}" data-k="facturacion" data-v="I’d rather not say" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#A1A1AA;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">I’d rather not say</button>
+                </div>
+              </fieldset>
+            </sc-if>
+            <sc-if value="{{ isFed }}" hint-placeholder-val="{{ false }}">
+              <fieldset data-testid="form-step-5" style="border:0;margin:0;padding:0">
+                <legend id="form-step-title" tabindex="-1" style="padding:0;margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3vw,36px);line-height:1">How many athletes are in high-performance programs?</legend>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:8px">
+                  <button type="button" onClick="{{ pick }}" data-k="tecnificacion" data-v="1–20" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">1–20</button>
+                  <button type="button" onClick="{{ pick }}" data-k="tecnificacion" data-v="21–50" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">21–50</button>
+                  <button type="button" onClick="{{ pick }}" data-k="tecnificacion" data-v="51–150" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">51–150</button>
+                  <button type="button" onClick="{{ pick }}" data-k="tecnificacion" data-v="151–500" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">151–500</button>
+                  <button type="button" onClick="{{ pick }}" data-k="tecnificacion" data-v="500+" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">500+</button>
+                </div>
+              </fieldset>
+            </sc-if>
+          </sc-if>
+          <sc-if value="{{ stepS.s6 }}" hint-placeholder-val="{{ false }}">
+            <fieldset data-testid="form-step-6" style="border:0;margin:0;padding:0">
+              <legend id="form-step-title" tabindex="-1" style="padding:0;margin-bottom:20px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3vw,36px);line-height:1">When do you want to be up and running?</legend>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px">
+                <button type="button" onClick="{{ pick }}" data-k="urgencia" data-v="As soon as possible" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">As soon as possible</button>
+                <button type="button" onClick="{{ pick }}" data-k="urgencia" data-v="In 1–3 months" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">In 1–3 months</button>
+                <button type="button" onClick="{{ pick }}" data-k="urgencia" data-v="This season" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#FFFFFF;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">This season</button>
+                <button type="button" onClick="{{ pick }}" data-k="urgencia" data-v="Just exploring" style="min-height:56px;padding:14px 18px;border:1px solid #2A2A2A;border-radius:12px;background:#1F1F1F;color:#A1A1AA;font:inherit;font-weight:500;text-align:left;cursor:pointer" style-hover="border-color:#39FF14">Just exploring</button>
+              </div>
+            </fieldset>
+          </sc-if>
+          <sc-if value="{{ stepS.s7 }}" hint-placeholder-val="{{ false }}">
+            <form onSubmit="{{ submit }}" noValidate="{{ true }}" data-testid="form-step-7" aria-labelledby="form-step-title">
+              <h3 id="form-step-title" tabindex="-1" style="margin:0 0 24px;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3vw,36px);line-height:1">Your contact details</h3>
+              <input type="hidden" name="utm_source" value="{{ utm.utm_source }}"><input type="hidden" name="utm_medium" value="{{ utm.utm_medium }}"><input type="hidden" name="utm_campaign" value="{{ utm.utm_campaign }}"><input type="hidden" name="utm_content" value="{{ utm.utm_content }}"><input type="hidden" name="utm_term" value="{{ utm.utm_term }}"><input type="hidden" name="fbclid" value="{{ utm.fbclid }}"><input type="hidden" name="calculadora" value="{{ calcHidden }}">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px">
+                <div style="display:flex;flex-direction:column;gap:8px"><label for="f-nombre" style="font-size:15px;font-weight:500">Name</label><input id="f-nombre" name="nombre" autocomplete="given-name" onChange="{{ onField }}" aria-invalid="{{ inv.nombre }}" aria-describedby="e-nombre" data-testid="input-nombre" style="height:52px;padding:0 14px;border:1px solid #2A2A2A;border-radius:8px;background:#000;color:#FFFFFF;font:inherit;width:100%" style-focus="border-color:#39FF14;outline:none"><span id="e-nombre" role="alert" style="font-size:13px;color:#FF8A80">{{ err.nombre }}</span></div>
+                <div style="display:flex;flex-direction:column;gap:8px"><label for="f-marca" style="font-size:15px;font-weight:500">Club, academy or brand name</label><input id="f-marca" name="marca" autocomplete="organization" onChange="{{ onField }}" aria-invalid="{{ inv.marca }}" aria-describedby="e-marca" data-testid="input-marca" style="height:52px;padding:0 14px;border:1px solid #2A2A2A;border-radius:8px;background:#000;color:#FFFFFF;font:inherit;width:100%" style-focus="border-color:#39FF14;outline:none"><span id="e-marca" role="alert" style="font-size:13px;color:#FF8A80">{{ err.marca }}</span></div>
+                <div style="display:flex;flex-direction:column;gap:8px"><label for="f-email" style="font-size:15px;font-weight:500">Email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" onChange="{{ onField }}" aria-invalid="{{ inv.email }}" aria-describedby="e-email" data-testid="input-email" style="height:52px;padding:0 14px;border:1px solid #2A2A2A;border-radius:8px;background:#000;color:#FFFFFF;font:inherit;width:100%" style-focus="border-color:#39FF14;outline:none"><span id="e-email" role="alert" style="font-size:13px;color:#FF8A80">{{ err.email }}</span></div>
+                <div style="display:flex;flex-direction:column;gap:8px"><label for="f-tel" style="font-size:15px;font-weight:500">WhatsApp</label>
+                  <div style="display:flex;gap:8px">
+                    <select id="f-prefijo" name="prefijo" aria-label="Country code" onChange="{{ onField }}" style="height:52px;padding:0 10px;border:1px solid #2A2A2A;border-radius:8px;background:#000;color:#FFFFFF;font:inherit;flex-shrink:0"><option value="+34">ES +34</option><option value="+351">PT +351</option><option value="+33">FR +33</option><option value="+39">IT +39</option><option value="+44">UK +44</option><option value="+49">DE +49</option><option value="+52">MX +52</option><option value="+54">AR +54</option><option value="+1">US +1</option></select>
+                    <input id="f-tel" name="tel" type="tel" autocomplete="tel-national" inputmode="tel" onChange="{{ onField }}" aria-invalid="{{ inv.tel }}" aria-describedby="e-tel" data-testid="input-whatsapp" style="height:52px;padding:0 14px;border:1px solid #2A2A2A;border-radius:8px;background:#000;color:#FFFFFF;font:inherit;width:100%;min-width:0" style-focus="border-color:#39FF14;outline:none">
+                  </div><span id="e-tel" role="alert" style="font-size:13px;color:#FF8A80">{{ err.tel }}</span></div>
+                <div style="display:flex;flex-direction:column;gap:8px;grid-column:1/-1"><label for="f-web" style="font-size:15px;font-weight:500">Website or Instagram <span style="color:#A1A1AA;font-weight:400">(optional)</span></label><input id="f-web" name="web" onChange="{{ onField }}" data-testid="input-web" style="height:52px;padding:0 14px;border:1px solid #2A2A2A;border-radius:8px;background:#000;color:#FFFFFF;font:inherit;width:100%" style-focus="border-color:#39FF14;outline:none"></div>
+              </div>
+              <div style="margin-top:24px;display:flex;flex-direction:column;gap:14px">
+                <label style="display:flex;gap:12px;align-items:flex-start;font-size:15px;cursor:pointer"><input type="checkbox" name="privacidad" onChange="{{ onField }}" aria-invalid="{{ inv.privacidad }}" aria-describedby="e-privacidad" data-testid="check-privacidad" style="width:22px;height:22px;margin:1px 0 0;accent-color:#39FF14;flex-shrink:0"><span>I have read and accept the <a href="/en/privacidad" target="_blank" rel="noopener" style="color:#FFFFFF">privacy policy</a>.</span></label>
+                <span id="e-privacidad" role="alert" style="font-size:13px;color:#FF8A80;margin-top:-8px">{{ err.privacidad }}</span>
+                <label style="display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#A1A1AA;cursor:pointer"><input type="checkbox" name="comerciales" onChange="{{ onField }}" data-testid="check-comerciales" style="width:22px;height:22px;margin:1px 0 0;accent-color:#39FF14;flex-shrink:0"><span>I’d like to receive marketing communications from BIVO (optional).</span></label>
+              </div>
+              <button type="submit" data-testid="form-submit" style="margin-top:28px;width:100%;min-height:60px;border:0;border-radius:100px;background:#39FF14;color:#000;font:inherit;font-weight:700;font-size:18px;cursor:pointer;transition:filter 150ms ease-out,transform 150ms ease-out" style-hover="filter:brightness(1.05)" style-active="transform:scale(0.98)">Book your free assessment →</button>
+              <p style="margin:12px 0 0;text-align:center;font-size:13px;color:#A1A1AA">[30]-min call · No commitment · Limited spots each week</p>
+            </form>
+          </sc-if>
+        </sc-if>
+
+        <sc-if value="{{ r.player }}" hint-placeholder-val="{{ false }}">
+          <div data-testid="form-result-player" style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
+            <h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3vw,40px);line-height:1">The BIVO player app is what you need.</h3>
+            <p style="margin:0;color:#A1A1AA;max-width:560px">BIVO Coach is for those who offer strength & conditioning. If you want to train on your own, the BIVO app builds a personalized plan for your sport.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center"><a href="/en/descargar" data-testid="cta-app-jugador" style="display:inline-flex;align-items:center;min-height:56px;padding:0 28px;border-radius:100px;background:#39FF14;color:#000;font-weight:700;text-decoration:none">Download the BIVO app</a><button type="button" onClick="{{ restart }}" style="min-height:48px;background:none;border:0;color:#FFFFFF;font:inherit;text-decoration:underline;text-underline-offset:4px;cursor:pointer">I picked the wrong role</button></div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ r.unq }}" hint-placeholder-val="{{ false }}">
+          <div data-testid="form-result-unqualified" style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
+            <h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3vw,40px);line-height:1">Thanks, {{ name }}.</h3>
+            <p style="margin:0;color:#A1A1AA;max-width:560px">We’ll message you on WhatsApp with information tailored to your case.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center"><a href="{{ waHref }}" target="_blank" rel="noopener" onClick="{{ waClick }}" data-testid="whatsapp-unqualified" style="display:inline-flex;align-items:center;min-height:56px;padding:0 28px;border-radius:100px;background:#39FF14;color:#000;font-weight:700;text-decoration:none">Message us on WhatsApp</a><button type="button" onClick="{{ seeCal }}" data-testid="unqualified-see-calendar" style="min-height:48px;background:none;border:0;color:#FFFFFF;font:inherit;text-decoration:underline;text-underline-offset:4px;cursor:pointer">See the calendar anyway</button></div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ r.qual }}" hint-placeholder-val="{{ false }}">
+          <div data-testid="form-result-calendar" style="display:flex;flex-direction:column;gap:20px">
+            <h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3vw,40px);line-height:1">Pick a day and time for your assessment</h3>
+            <p style="margin:0;color:#A1A1AA;font-size:15px">Prefilled: {{ sum.nombre }} · {{ sum.email }} · {{ sum.rol }} · {{ sum.dep }} athletes</p>
+            <div id="calendar" ref="{{ calEl }}" data-testid="cal-inline" style="width:100%;min-height:700px;border:1px solid #2A2A2A;border-radius:12px;overflow:hidden;background:#0F0F0F"></div>
+            <a href="{{ calHref }}" target="_blank" rel="noopener" data-testid="cal-open-tab" style="align-self:flex-start;color:#FFFFFF;font-size:15px;text-decoration:underline;text-underline-offset:4px">Can't see the calendar? Open it in a new tab</a>
+          </div>
+        </sc-if>
+        <sc-if value="{{ r.booked }}" hint-placeholder-val="{{ false }}">
+          <div data-testid="thank-you" style="display:flex;flex-direction:column;gap:24px">
+            <h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(36px,4.4vw,56px);line-height:0.95">Your assessment is <span style="color:#39FF14">booked.</span></h3>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:18px 20px;border:1px solid #2A2A2A;border-radius:12px;background:#000"><span style="font-size:16px;font-weight:700;color:#FFFFFF">{{ bookedAt }}</span></div>
+            <div style="aspect-ratio:16/9;border:1px dashed #2A2A2A;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#A1A1AA">[ASSET: 60 s video of Toni · what to expect on the call]</div>
+            <div><p style="margin:0 0 12px;font-weight:700">To make the most of the call, have ready:</p><p style="margin:0;color:#A1A1AA">Number of athletes · How you program today · What you charge or would like to charge.</p></div>
+            <p style="margin:0;font-size:15px;color:#A1A1AA">We’ll send you a reminder by WhatsApp and email.</p>
+          </div>
+        </sc-if>
+      </div>
+
+      <aside aria-label="How we work with you" style="display:flex;flex-direction:column;gap:28px">
+        <p style="margin:0;font-weight:700;font-size:18px;line-height:1.3">You’ll speak with BIVO’s founding team.</p>
+        <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:20px">
+          <li style="display:flex;gap:14px"><span style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:#39FF14;line-height:1.2">01</span><span><strong style="display:block">Tell us about your business (2 min)</strong><span style="color:#A1A1AA;font-size:15px">A short form to prepare the call.</span></span></li>
+          <li style="display:flex;gap:14px"><span style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:#39FF14;line-height:1.2">02</span><span><strong style="display:block">Assessment ([30] min)</strong><span style="color:#A1A1AA;font-size:15px">We look at how much time you can win back and how to turn it into revenue. You leave with clarity, whether or not you work with us.</span></span></li>
+          <li style="display:flex;gap:14px"><span style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:#39FF14;line-height:1.2">03</span><span><strong style="display:block">Tailored proposal</strong><span style="color:#A1A1AA;font-size:15px">Based on your number of athletes and your business model.</span></span></li>
+          <li style="display:flex;gap:14px"><span style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:#39FF14;line-height:1.2">04</span><span><strong style="display:block">Onboarding</strong><span style="color:#A1A1AA;font-size:15px">We set up your athletes with you and support you through launch. <span style="font-family:ui-monospace,Menlo,monospace;font-size:12px">[DATA: timeline]</span></span></span></li>
+        </ol>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#FFFFFF;padding:clamp(48px,7vw,72px) 0 clamp(96px,10vw,48px)">
+  <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:32px 48px">
+    <div style="display:flex;flex-direction:column;gap:14px"><a href="/en" aria-label="BIVO Training" style="display:inline-block;width:fit-content"><img src="/coach/assets/logo-black.png" alt="BIVO" width="132" height="24" style="width:132px;height:auto;display:block"></a></div>
+    <div><p style="margin:0 0 12px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#55555C">Contact</p><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:15px"><li><a href="mailto:hello@bivotraining.com">hello@bivotraining.com</a></li><li><a href="{{ waHref }}" target="_blank" rel="noopener" onClick="{{ waClick }}" data-testid="whatsapp-footer">WhatsApp +34 627 72 94 29</a></li></ul></div>
+    <div><p style="margin:0 0 12px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#55555C">Social</p><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:15px"><li><a href="[LINK: Instagram]">Instagram</a></li><li><a href="[LINK: LinkedIn]">LinkedIn</a></li></ul></div>
+    <div><p style="margin:0 0 12px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#55555C">Legal</p><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:15px"><li><a href="/en/terminos">Legal notice</a></li><li><a href="/en/privacidad">Privacy policy</a></li><li><a href="/en/cookies">Cookie policy</a></li></ul></div>
+  </div>
+  <p style="max-width:1240px;margin:40px auto 0;padding:0 clamp(20px,4vw,48px);font-size:12px;color:#55555C">© BIVO Training S.L. · Parc Bit, Mallorca · Centre Bit, Menorca</p>
+</footer>
+
+<sc-if value="{{ chrome.isMobile }}" hint-placeholder-val="{{ false }}">
+  <div aria-hidden="{{ chrome.stickyHidden }}" style="position:fixed;left:0;right:0;bottom:0;z-index:40;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,0.95);border-top:1px solid #E7E3E0;transform:{{ chrome.stickyTf }};transition:transform 250ms ease-out">
+    <a href="#diagnostico" onClick="{{ goTo }}" data-target="diagnostico" data-testid="cta-sticky-mobile" tabindex="{{ chrome.stickyTab }}" style="display:flex;align-items:center;justify-content:center;min-height:56px;border-radius:100px;background:#39FF14;color:#000;font-weight:700;font-size:17px;text-decoration:none">Book your assessment</a>
+  </div>
+</sc-if>
+<sc-if value="{{ chrome.showWa }}" hint-placeholder-val="{{ false }}">
+  <a href="{{ waHref }}" target="_blank" rel="noopener" onClick="{{ waClick }}" data-testid="whatsapp-float" aria-label="Message us on WhatsApp" style="position:fixed;right:16px;bottom:{{ chrome.waBottom }};z-index:45;width:56px;height:56px;border-radius:100px;background:#000;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px -10px rgba(0,0,0,0.5);transition:bottom 250ms ease-out,transform 150ms ease-out" style-hover="transform:scale(1.05);color:#FFFFFF"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></a>
+</sc-if>
+<sc-if value="{{ chrome.showCookie }}" hint-placeholder-val="{{ false }}">
+  <div role="region" aria-label="Cookie notice" data-testid="cookie-banner" style="position:fixed;left:12px;right:12px;bottom:12px;z-index:60;max-width:720px;margin:0 auto;padding:20px;border:1px solid #DAD5D1;border-radius:12px;background:#FFFFFF;box-shadow:0 20px 50px -20px rgba(0,0,0,0.3);display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+    <p style="margin:0;flex:1 1 280px;font-size:14px;color:#55555C">We use our own and third-party cookies (Meta) to measure our campaigns. We only enable them if you accept. <a href="/en/cookies" target="_blank" rel="noopener" style="color:#000">Learn more</a></p>
+    <div style="display:flex;gap:8px;flex:1 1 220px"><button type="button" onClick="{{ rejectCookies }}" data-testid="cookies-reject" style="flex:1;min-height:48px;border-radius:100px;border:1px solid #000;background:transparent;color:#000;font:inherit;font-weight:700;cursor:pointer">Reject</button><button type="button" onClick="{{ acceptCookies }}" data-testid="cookies-accept" style="flex:1;min-height:48px;border-radius:100px;border:1px solid #000;background:transparent;color:#000;font:inherit;font-weight:700;cursor:pointer">Accept</button></div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;h1Variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],&quot;default&quot;:&quot;A&quot;,&quot;tsType&quot;:&quot;'A'|'B'|'C'&quot;,&quot;section&quot;:&quot;Test A/B&quot;},&quot;defaultPrice&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:49,&quot;min&quot;:0,&quot;max&quot;:500,&quot;unit&quot;:&quot;€&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Calculadora&quot;}}">
+const SCEN_SRC = ['/coach/assets/app-dolor.png', '/coach/assets/app-material.png', '/coach/assets/app-sustituir.png', '/coach/assets/app-agenda.png'];
+const SCEN_ALT = ['App: the athlete reports discomfort', 'App: the athlete changes their available equipment', 'App: swapping an exercise for another that works the same', 'App: schedule with redistributed workouts'];
+const LOGOS = [
+  { src: '/coach/assets/logo-fpib.png', alt: 'Federació de Pàdel de les Illes Balears', h: 64 },
+  { src: '/coach/assets/logo-febab.png', alt: 'Federació Balear de Bàdminton', h: 64 },
+  { src: '/coach/assets/logo-sabadell-pickleball.png', alt: 'Sabadell Pickleball Club Academy', h: 72 },
+  { src: '/coach/assets/logo-la-salle.png', alt: 'Club de Tenis La Salle', h: 80 },
+  { src: '/coach/assets/logo-pdpadel-v2.png', alt: 'PdPadel Club', h: 72 },
+];
+const HERO_SHOTS = [
+  ['/coach/assets/app-rec-1.mp4', 'BIVO app: the athlete does their workout', 1],
+  ['/coach/assets/app-plan.png', 'BIVO app: the athlete’s personalized plan'],
+  ['/coach/assets/app-rec-2.mp4', 'BIVO app: exercise with video guidance', 1],
+  ['/coach/assets/app-entrena-plus.png', 'BIVO app: Entrena+, specific routines to complement the plan'],
+  ['/coach/assets/app-desplazamientos.png', 'BIVO app: footwork routines'],
+  ['/coach/assets/app-rec-3.mp4', 'BIVO app: logging sets and reps', 1],
+  ['/coach/assets/app-agenda.png', 'BIVO app: workout schedule'],
+  ['/coach/assets/app-rec-4.mp4', 'BIVO app: the athlete completes their session', 1],
+  ['/coach/assets/app-estadisticas.png', 'BIVO app: performance stats'],
+  ['/coach/assets/app-rec-5.mp4', 'BIVO app: guided workout in the app', 1],
+  ['/coach/assets/app-resultados.png', 'BIVO app: results history and match stats'],
+  ['/coach/assets/app-onboarding-material.png', 'BIVO app: the athlete selects their available equipment'],
+];
+
+class Component extends DCLogic {
+  CONFIG = {
+    whatsapp: '34627729429',
+    calLink: 'bivo-ps0vzh/diagnostico',
+    calUrl: 'https://cal.com/bivo-ps0vzh/diagnostico',
+    b2bRoles: ['Club director/manager', 'Academy lead', 'Online coach/S&C coach', 'In-person coach', 'Federation'],
+    athletesOk: ['21–50', '51–150', '151–500', '500+'],
+    revenueOk: ['€3,000–10,000', '€10,000–30,000', '€30,000+'],
+    metaPixelId: '1468942101048411', // Meta Pixel ID (loads only after cookie consent)
+    leadWebhook: '', // URL de la Web App de Google Apps Script (Google Sheets)
+    notUrgent: 'Just exploring',
+  };
+  state = {
+    scen: 0, faq: -1, athletes: 60, price: null, calcPrefill: null,
+    step: 1, a: {}, c: { prefijo: '+34' }, errors: {}, result: null,
+    scrolled: false, pastHero: false, formVisible: false, isMobile: false,
+    consent: 'pending', vppr: false, video: false, heroScale: 0.8, utm: {},
+    menu: false, tour: 0, heroShot: 0,
+  };
+  heroEl = React.createRef(); heroMock = React.createRef(); formEl = React.createRef(); vpprEl = React.createRef();
+
+  componentDidMount() {
+    document.documentElement.lang = 'en';
+    let consent = null;
+    try { if (localStorage.getItem('bivo-cookie-consent')) consent = localStorage.getItem('bivo-analytics-enabled') === 'true' ? 'accepted' : 'rejected'; } catch (e) {}
+    const q = new URLSearchParams(location.search), utm = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'].forEach(k => (utm[k] = q.get(k) || ''));
+    this.setState({ consent: consent || null, utm, price: this.props.defaultPrice ?? 49 });
+    this.onScroll = () => {
+      const y = window.scrollY;
+      const hb = this.heroEl.current ? this.heroEl.current.getBoundingClientRect().bottom + y : 900;
+      const scrolled = y > 16, pastHero = y > hb - 200;
+      if (scrolled !== this.state.scrolled || pastHero !== this.state.pastHero) this.setState({ scrolled, pastHero });
+      if (!this.vc && (y + innerHeight) / document.documentElement.scrollHeight >= 0.5) { this.vc = true; this.track('ViewContent'); }
+    };
+    this.onResize = () => { const isMobile = window.innerWidth < 768, compact = window.innerWidth < 1100; if (isMobile !== this.state.isMobile || compact !== this.state.compact) this.setState({ isMobile, compact }); this.measure(); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onResize);
+    this.ro = new ResizeObserver(() => this.measure());
+    this.io = new IntersectionObserver(es => es.forEach(en => {
+      if (en.target === this.formEl.current) this.setState({ formVisible: en.isIntersecting });
+      if (en.target === this.vpprEl.current && en.isIntersecting) this.setState({ vppr: true });
+    }), { threshold: 0.2 });
+    this.onResize(); this.onScroll(); this.observe();
+    if (consent === 'accepted') this.loadPixel();
+    this.track('PageView');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.motion = true;
+    }
+    this.onKey = e => { if (e.key === 'Escape' && this.state.menu) this.setState({ menu: false }); };
+    window.addEventListener('keydown', this.onKey);
+  }
+  componentDidUpdate() { this.observe(); this.mountCal(); }
+  calEl = React.createRef();
+  calParams() {
+    const s = this.state, p = { name: (s.c.nombre || '').trim(), email: s.c.email || '', rol: s.a.rol || '', deportistas: s.a.deportistas || s.a.tecnificacion || '', deporte: s.a.deporte || '', whatsapp: s.c.tel ? `${s.c.prefijo || ''}${s.c.tel}`.replace(/\s/g, '') : '', utm_source: s.utm.utm_source || '', utm_medium: s.utm.utm_medium || '', utm_campaign: s.utm.utm_campaign || '', lang: 'en', timeZone: 'Europe/Madrid' };
+    Object.keys(p).forEach(k => { if (!p[k]) delete p[k]; });
+    return p;
+  }
+  mountCal() {
+    const el = this.calEl.current;
+    if (!el || this.calMountedOn === el) return;
+    this.calMountedOn = el;
+    (function (C, A, L) { const p = (a, ar) => a.q.push(ar), d = C.document; C.Cal = C.Cal || function () { const cal = C.Cal, ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }, ns = ar[1]; api.q = api.q || []; if (typeof ns === 'string') { cal.ns[ns] = cal.ns[ns] || api; p(cal.ns[ns], ar); p(cal, ['initNamespace', ns]); } else p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
+    const Cal = window.Cal;
+    if (!this.calInit) { Cal('init', 'diagnostico', { origin: 'https://cal.com' }); this.calInit = true; }
+    const ns = Cal.ns.diagnostico;
+    ns('inline', { elementOrSelector: el, calLink: this.CONFIG.calLink, config: { layout: 'month_view', theme: 'dark', ...this.calParams() } });
+    ns('ui', { theme: 'dark', layout: 'month_view', hideEventTypeDetails: false, cssVarsPerTheme: { dark: { 'cal-brand': '#39FF14', 'cal-brand-text': '#000000' } } });
+    if (!this.calListen) {
+      this.calListen = true;
+      ns('on', { action: 'bookingSuccessful', callback: e => {
+        const d = (e && e.detail && e.detail.data) || {}, start = d.startTime || (d.booking && d.booking.startTime) || d.date;
+        let bookedAt = '';
+        if (start) { try { bookedAt = new Date(start).toLocaleString('en-GB', { timeZone: 'Europe/Madrid', weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }); } catch (err) {} }
+        this.sendLead({ lead_id: this.leadId, estado: 'Llamada agendada', fecha: new Date().toISOString(), cita: start || '' });
+        this.track('Schedule', { qualified: true });
+        this.setState({ result: 'booked', bookedAt });
+        setTimeout(() => this.scrollToId('diagnostico'), 30);
+      } });
+    }
+  }
+  scheduleShot() {
+    if (!this.motion) return;
+    clearTimeout(this.shotTimer);
+    const isVid = !!HERO_SHOTS[this.state.heroShot][2];
+    this.shotTimer = setTimeout(() => this.nextShot(), isVid ? 7000 : 1600);
+  }
+  nextShot() {
+    if (!this.motion) return;
+    clearTimeout(this.shotTimer);
+    if (document.hidden) { this.scheduleShot(); return; }
+    this.setState(x => ({ heroShot: (x.heroShot + 1) % HERO_SHOTS.length }));
+    this.shotTimer = setTimeout(() => this.nextShot(), 8000);
+  }
+  componentWillUnmount() { this.motion = false; clearTimeout(this.shotTimer); window.removeEventListener('keydown', this.onKey); window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onResize); this.ro && this.ro.disconnect(); this.io && this.io.disconnect(); }
+  observe() {
+    const h = this.heroMock.current; if (h && !h.__ro) { h.__ro = 1; this.ro.observe(h); }
+    [this.formEl, this.vpprEl].forEach(r => { if (r.current && !r.current.__io) { r.current.__io = 1; this.io.observe(r.current); } });
+  }
+  measure() { const h = this.heroMock.current; if (!h) return; const s = h.clientWidth / 1180; if (Math.abs(s - this.state.heroScale) > 0.001) this.setState({ heroScale: s }); }
+  sendLead(data) {
+    const url = this.CONFIG.leadWebhook; if (!url || !data.lead_id) return;
+    try { fetch(url, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data), keepalive: true }); } catch (e) {}
+  }
+  loadPixel() {
+    const id = this.CONFIG.metaPixelId; if (!id || window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', id); window.__bivoPixelLoaded = true;
+  }
+  track(name, params = {}) {
+    const event_id = `${name}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+    (window.__bivoEvents = window.__bivoEvents || []).push({ name, ...params, event_id });
+    if (this.state.consent === 'accepted' && window.fbq) {
+      const std = ['PageView', 'ViewContent', 'Contact', 'Lead', 'Schedule'].includes(name);
+      window.fbq(std ? 'track' : 'trackCustom', name, params, { eventID: event_id });
+    }
+  }
+  scrollToId(id) {
+    const el = document.getElementById(id); if (!el) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 76, behavior: reduce ? 'auto' : 'smooth' });
+  }
+  isQualified() {
+    const a = this.state.a, C = this.CONFIG;
+    const size = C.athletesOk.includes(a.deportistas) || C.athletesOk.includes(a.tecnificacion) || C.revenueOk.includes(a.facturacion);
+    return C.b2bRoles.includes(a.rol) && size && a.urgencia !== C.notUrgent;
+  }
+  buildMarquee() {
+    if (this._mq) return this._mq;
+    const h = React.createElement;
+    const item = (l, i) => h('li', { key: i, style: { flexShrink: 0, height: 88, minWidth: 150, padding: '0 28px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#FFFFFF', borderRadius: 12 } },
+      l.src ? h('img', { src: l.src, alt: l.alt, height: l.h, style: { height: l.h, width: 'auto', display: 'block' } })
+        : h('span', { style: { fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 800, fontSize: 22, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#55555C', whiteSpace: 'nowrap' } }, l.text));
+    const list = [...LOGOS, ...LOGOS, ...LOGOS, ...LOGOS];
+    this._mq = h('ul', { 'data-marquee': '', 'aria-label': 'Organizations working with BIVO', style: { listStyle: 'none', margin: 0, padding: 0, display: 'flex', gap: 14, width: 'max-content', animation: 'bivo-marquee 38s linear infinite' } },
+      list.map((l, i) => h(React.Fragment, { key: i }, i >= LOGOS.length * 2 ? React.cloneElement(item(l, i), { 'aria-hidden': 'true' }) : item(l, i))));
+    return this._mq;
+  }
+
+  renderVals() {
+    const s = this.state;
+    const fmt = n => Math.round(n).toLocaleString('en-GB');
+    const price = s.price ?? (this.props.defaultPrice ?? 49);
+    const monthly = s.athletes * (Number(price) || 0);
+    const rol = s.a.rol;
+    const waText = 'Hi, I’m coming from the BIVO Coach website and would like more information' + (rol ? ` (${rol.toLowerCase()}).` : '.');
+    const waHref = `https://wa.me/${this.CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`;
+    const variant = this.props.h1Variant ?? 'A';
+    const st = {}, showS = {};
+    for (let i = 0; i < 4; i++) {
+      const on = s.scen === i;
+      st['s' + i] = on ? { sel: 'true', ti: '0', bg: '#1F1F1F', bd: '#39FF14', fg: '#FFFFFF', num: '#39FF14' } : { sel: 'false', ti: '-1', bg: 'transparent', bd: '#2A2A2A', fg: '#A1A1AA', num: '#A1A1AA' };
+      showS['s' + i] = on;
+    }
+    const f = {};
+    for (let i = 0; i < 9; i++) { const o = s.faq === i; f['o' + i] = o; f['e' + i] = o ? 'true' : 'false'; f['r' + i] = o ? 'rotate(45deg)' : 'rotate(0deg)'; }
+    const stepS = {}; for (let i = 1; i <= 7; i++) stepS['s' + i] = s.step === i;
+    const err = s.errors;
+    const showCookie = s.consent === null;
+    const sticky = s.isMobile && s.pastHero && !s.formVisible && !showCookie;
+
+    return {
+      heroEl: this.heroEl, heroMock: this.heroMock, formEl: this.formEl, vpprEl: this.vpprEl,
+      h1: { a: variant === 'A', b: variant === 'B', c: variant === 'C' },
+      scale: { heroTf: `scale(${s.heroScale})`, heroH: `${Math.round(740 * s.heroScale)}px` },
+      marquee: this.buildMarquee(),
+      chrome: {
+        headerBg: s.menu ? '#FFFFFF' : s.scrolled ? 'rgba(255,255,255,0.9)' : 'transparent',
+        headerBd: s.scrolled || s.menu ? '#E7E3E0' : 'transparent',
+        headerBlur: s.scrolled ? 'blur(12px)' : 'none',
+        notMobile: !s.isMobile, isMobile: s.isMobile,
+        headerCta: s.isMobile ? 'Book' : 'Book your assessment', navFull: !s.compact, navCompact: s.compact, ctaMl: s.compact ? '0' : 'auto',
+        stickyHidden: sticky ? 'false' : 'true', stickyTab: sticky ? '0' : '-1', stickyTf: sticky ? 'translateY(0)' : 'translateY(120%)',
+        waBottom: sticky ? '92px' : '20px', showWa: !showCookie, showCookie,
+      },
+      waHref, waClick: () => this.track('Contact', { rol: rol || null }),
+      goTo: e => { e.preventDefault(); this.scrollToId(e.currentTarget.dataset.target || 'diagnostico'); },
+
+      heroItems: HERO_SHOTS, heroIdx: s.heroShot, heroShown: () => this.scheduleShot(), heroVideoEnded: () => this.nextShot(),
+      nav: { open: s.menu, exp: s.menu ? 'true' : 'false', rot: s.menu ? 'rotate(180deg)' : 'rotate(0deg)' },
+      toggleMenu: () => this.setState(x => ({ menu: !x.menu })),
+      navGo: e => { e.preventDefault(); const t = e.currentTarget.dataset.target; this.setState({ menu: false }, () => this.scrollToId(t)); },
+      tt: [0, 1, 2].reduce((o, i) => { const on = s.tour === i; o['t' + i] = on ? { sel: 'true', ti: '0', bg: '#000', fg: '#FFFFFF', bd: '#000' } : { sel: 'false', ti: '-1', bg: 'transparent', fg: '#000', bd: '#DAD5D1' }; return o; }, {}),
+      showT: { t0: s.tour === 0, t1: s.tour === 1, t2: s.tour === 2 },
+      setTour: e => this.setState({ tour: Number(e.currentTarget.dataset.i) }),
+      tourKey: e => {
+        let i = s.tour;
+        if (e.key === 'ArrowRight') i = (i + 1) % 3; else if (e.key === 'ArrowLeft') i = (i + 2) % 3; else return;
+        e.preventDefault(); this.setState({ tour: i });
+        setTimeout(() => { const el = document.getElementById('tab-tour-' + i); el && el.focus(); }, 0);
+      },
+      st, showS, scenSrc: SCEN_SRC[s.scen], scenAlt: SCEN_ALT[s.scen],
+      setScen: e => this.setState({ scen: Number(e.currentTarget.dataset.i) }),
+      tabKey: e => {
+        let i = s.scen;
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') i = (i + 1) % 4; else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') i = (i + 3) % 4;
+        else if (e.key === 'Home') i = 0; else if (e.key === 'End') i = 3; else return;
+        e.preventDefault(); this.setState({ scen: i });
+        setTimeout(() => { const el = document.getElementById('tab-scen-' + i); el && el.focus(); }, 0);
+      },
+      vpprW: s.vppr ? '100%' : '0%', vpprDesk: !s.isMobile,
+
+      calc: { athletes: s.athletes, price, monthly: fmt(monthly), yearly: fmt(monthly * 12), athletesTxt: fmt(s.athletes) },
+      onAthletes: e => this.setState({ athletes: Number(e.target.value) }),
+      onPrice: e => this.setState({ price: e.target.value === '' ? '' : Math.max(0, Number(e.target.value)) }),
+      calcCall: () => {
+        const n = s.athletes;
+        const bucket = n <= 20 ? '1–20' : n <= 50 ? '21–50' : n <= 150 ? '51–150' : n <= 500 ? '151–500' : '500+';
+        this.setState(x => ({ calcPrefill: { athletes: n, price }, a: { ...x.a, deportistas: bucket } }));
+        this.track('CalculatorToCall', { athletes: n, price });
+        this.scrollToId('diagnostico');
+      },
+
+      f, toggleFaq: e => { const i = Number(e.currentTarget.dataset.i); this.setState(x => ({ faq: x.faq === i ? -1 : i })); },
+
+      stepS, progress: `${Math.round(((s.step - 1) / 7) * 100)}%`, progressNum: Math.round(((s.step - 1) / 7) * 100), stepLabel: `Step ${s.step} of 7`,
+      isFed: s.a.rol === 'Federation', notFed: s.a.rol !== 'Federation', showBack: s.step > 1,
+      calcNote: s.calcPrefill ? `Calculator data: ${fmt(s.calcPrefill.athletes)} athletes · €${fmt(s.calcPrefill.price)}/month per athlete` : '',
+      hasCalcNote: !!s.calcPrefill && !s.result,
+      pick: e => {
+        const { k, v } = e.currentTarget.dataset;
+        if (!this.started) { this.started = true; this.track('FormStart'); }
+        if (k === 'rol' && v === 'I’m a player') { this.setState({ result: 'player' }); return; }
+        this.setState(x => ({ a: { ...x.a, [k]: v }, step: Math.min(7, x.step + 1) }));
+        setTimeout(() => { const el = document.getElementById('form-step-title'); el && el.focus({ preventScroll: true }); }, 30);
+      },
+      back: () => this.setState(x => ({ step: Math.max(1, x.step - 1) })),
+      onField: e => { const t = e.target, v = t.type === 'checkbox' ? t.checked : t.value; this.setState(x => ({ c: { ...x.c, [t.name]: v }, errors: { ...x.errors, [t.name]: '' } })); },
+      submit: e => {
+        e.preventDefault();
+        const c = s.c, er = {};
+        if (!(c.nombre || '').trim()) er.nombre = 'Enter your name.';
+        if (!(c.marca || '').trim()) er.marca = 'Enter your club, academy or brand name.';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.email || '')) er.email = 'Check your email: it looks incomplete.';
+        if ((c.tel || '').replace(/\D/g, '').length < 6) er.tel = 'Enter a valid WhatsApp number.';
+        if (!c.privacidad) er.privacidad = 'We need your consent to contact you.';
+        if (Object.keys(er).length) { this.setState({ errors: er }); return; }
+        const qualified = this.isQualified();
+        this.leadId = this.leadId || 'L' + Date.now().toString(36);
+        const lead = { lead_id: this.leadId, estado: 'Formulario enviado', fecha: new Date().toISOString(), idioma: document.documentElement.lang, ...s.a, ...c, telefono: (c.prefijo || '') + ' ' + (c.tel || ''), ...s.utm, calc_deportistas: s.calcPrefill ? s.calcPrefill.athletes : '', calc_precio: s.calcPrefill ? s.calcPrefill.price : '', cualificado: qualified ? 'Sí' : 'No', pagina: location.href };
+        (window.__bivoLeads = window.__bivoLeads || []).push(lead);
+        this.sendLead(lead);
+        this.track('Lead', { qualified });
+        this.setState({ result: qualified ? 'qualified' : 'unqualified' });
+        setTimeout(() => this.scrollToId('diagnostico'), 30);
+      },
+      err, inv: { nombre: err.nombre ? 'true' : 'false', marca: err.marca ? 'true' : 'false', email: err.email ? 'true' : 'false', tel: err.tel ? 'true' : 'false', privacidad: err.privacidad ? 'true' : 'false' },
+      utm: s.utm, calcHidden: s.calcPrefill ? `${s.calcPrefill.athletes}|${s.calcPrefill.price}` : '',
+      r: { form: !s.result, player: s.result === 'player', qual: s.result === 'qualified', unq: s.result === 'unqualified', booked: s.result === 'booked' },
+      name: (s.c.nombre || '').trim().split(' ')[0] || '',
+      sum: { rol: s.a.rol || '—', dep: s.a.deportistas || s.a.tecnificacion || '—', email: s.c.email || '', nombre: s.c.nombre || '' },
+      calUrl: this.CONFIG.calUrl, calEl: this.calEl,
+      calHref: this.CONFIG.calUrl + '?' + new URLSearchParams({ layout: 'month_view', ...this.calParams() }).toString(),
+      bookedAt: s.bookedAt || 'Check your email: we have sent you the confirmation.',
+      book: () => { this.sendLead({ lead_id: this.leadId, estado: 'Llamada agendada', fecha: new Date().toISOString() }); this.track('Schedule', { qualified: true }); this.setState({ result: 'booked' }); setTimeout(() => this.scrollToId('diagnostico'), 30); },
+      seeCal: () => this.setState({ result: 'qualified' }),
+      restart: () => this.setState({ step: 1, a: {}, result: null, errors: {} }),
+      acceptCookies: () => { try { localStorage.setItem('bivo-cookie-consent', 'set'); localStorage.setItem('bivo-analytics-enabled', 'true'); } catch (e) {} this.setState({ consent: 'accepted' }, () => { this.loadPixel(); this.track('PageView'); }); },
+      rejectCookies: () => { try { localStorage.setItem('bivo-cookie-consent', 'set'); localStorage.setItem('bivo-analytics-enabled', 'false'); } catch (e) {} this.setState({ consent: 'rejected' }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

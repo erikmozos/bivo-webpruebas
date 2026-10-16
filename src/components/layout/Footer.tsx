@@ -103,6 +103,14 @@ const Footer = () => {
                   </button>
                 </li>
               ))}
+              <li>
+                <a
+                  href={`/${lang}/coach`}
+                  className="text-gray-300 hover:text-bivo-green transition-colors"
+                >
+                  {t("nav.coach")}
+                </a>
+              </li>
             </ul>
           </div>
           

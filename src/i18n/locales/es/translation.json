@@ -12,7 +12,14 @@
       "openMenu": "Abrir menú",
       "closeMenu": "Cerrar menú"
     },
-    "logoAlt": "Bivo Training Logo"
+    "logoAlt": "Bivo Training Logo",
+    "coach": "BIVO Coach",
+    "coachPopover": {
+      "eyebrow": "Para profesionales",
+      "title": "¿Eres entrenador, club o federación?",
+      "text": "Gestiona a todos tus deportistas con BIVO Coach: planes de preparación física personalizados que se crean y se adaptan solos. Tú solo haces el seguimiento.",
+      "cta": "Ir a BIVO Coach"
+    }
   },
   "footer": {
     "brand": "Bivo",
