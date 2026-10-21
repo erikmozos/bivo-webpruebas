@@ -6,27 +6,27 @@
   "redirects": [
     {
       "source": "/coach",
-      "destination": "https://bivocoach.com/",
+      "destination": "https://www.bivocoach.com/",
       "permanent": true
     },
     {
       "source": "/es/coach",
-      "destination": "https://bivocoach.com/",
+      "destination": "https://www.bivocoach.com/",
       "permanent": true
     },
     {
       "source": "/es/coach/",
-      "destination": "https://bivocoach.com/",
+      "destination": "https://www.bivocoach.com/",
       "permanent": true
     },
     {
       "source": "/en/coach",
-      "destination": "https://bivocoach.com/en",
+      "destination": "https://www.bivocoach.com/en",
       "permanent": true
     },
     {
       "source": "/en/coach/",
-      "destination": "https://bivocoach.com/en",
+      "destination": "https://www.bivocoach.com/en",
       "permanent": true
     }
   ],
