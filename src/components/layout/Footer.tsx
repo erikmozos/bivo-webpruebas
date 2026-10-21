@@ -5,6 +5,7 @@ import { useLocale } from "@/hooks/useLocale";
 import { useLegalPath } from "@/hooks/useLegalPath";
 import { getHomeSectionIds } from "@/lib/sectionIds";
 import { APP_STORE_URL, GOOGLE_PLAY_URL, APP_DOWNLOAD_QR } from "@/lib/storeLinks";
+import { coachLandingUrl } from "@/lib/coachLinks";
 
 const COPYRIGHT_START_YEAR = 2025;
 
@@ -105,7 +106,7 @@ const Footer = () => {
               ))}
               <li>
                 <a
-                  href={`/${lang}/coach`}
+                  href={coachLandingUrl(lang)}
                   className="text-gray-300 hover:text-bivo-green transition-colors"
                 >
                   {t("nav.coach")}

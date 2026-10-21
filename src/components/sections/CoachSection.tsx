@@ -1,8 +1,9 @@
 import { ArrowRight, Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useLocale } from "@/hooks/useLocale";
+import { coachLandingUrl } from "@/lib/coachLinks";
 
-/** Sección de la home que presenta BIVO Coach (B2B) y lleva a su landing en /:lang/coach. */
+/** Sección de la home que presenta BIVO Coach (B2B) y lleva a su landing en bivocoach.com. */
 const CoachSection = () => {
   const { t } = useTranslation();
   const { lang } = useLocale();
@@ -39,7 +40,7 @@ const CoachSection = () => {
             <p className="font-semibold text-white mb-6">{t("coachSection.highlight")}</p>
 
             <a
-              href={`/${lang}/coach`}
+              href={coachLandingUrl(lang)}
               className="inline-flex items-center gap-2 rounded-full bg-bivo-green px-7 py-4 font-bold text-black transition-transform hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bivo-green"
             >
               {t("coachSection.cta")}
@@ -48,7 +49,7 @@ const CoachSection = () => {
           </div>
 
           <a
-            href={`/${lang}/coach`}
+            href={coachLandingUrl(lang)}
             tabIndex={-1}
             aria-hidden
             className="block rounded-2xl border border-white/10 bg-white/5 p-2 shadow-[0_30px_80px_-30px_rgba(57,255,20,0.35)] transition-transform hover:-translate-y-1"

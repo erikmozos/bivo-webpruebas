@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Trans, useTranslation } from "react-i18next";
 import { useLocale } from "@/hooks/useLocale";
 import { getSectionId } from "@/lib/sectionIds";
+import { coachLandingUrl } from "@/lib/coachLinks";
 import {
   type CarouselApi,
   Carousel,
@@ -131,7 +132,7 @@ const AlliancesSection = () => {
                           components={{
                             coachLink: (
                               <a
-                                href={`/${lang}/coach`}
+                                href={coachLandingUrl(lang)}
                                 className="font-semibold text-black underline decoration-bivo-green decoration-2 underline-offset-4 hover:text-bivo-green"
                               />
                             ),
